@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1c211d">
+<meta name="description" content="Web modelo del boceto A. Todo el contenido es de ejemplo.">
+<title>Inicio · Web modelo</title>
+<script>(function(){try{var d=document.documentElement,q=/[?&]intro/.test(location.search);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(q||!sessionStorage.getItem('intro')){d.classList.add('con-intro');sessionStorage.setItem('intro','1')}}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=5">
+<script src="app.js?v=5" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<div class="intro" aria-hidden="true"><div class="intro-marca"><span>Nombre<i>.</i></span></div><div class="intro-linea"></div></div>
+<div class="aviso">Web modelo del boceto A · Nombre, textos, categorías e imágenes son de ejemplo</div>
+<header class="cab"><div class="cont">
+  <a class="logo" href="index.html">Nombre<span>.</span></a>
+  <nav class="menu" id="menu" aria-label="Principal"><a href="index.html" class="aqui" aria-current="page">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+  <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+</div></header>
+<main id="contenido">
+<section class="portada">
+  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=70" alt="Imagen de muestra de un proyecto">
+  <div class="cont">
+    <h1><span class="linea-t"><span>Titular principal</span></span><span class="linea-t"><span>de la inmobiliaria</span></span></h1>
+    <p>Frase de ejemplo que resume qué hace la empresa y para quién.</p>
+    <a class="btn claro" href="proyectos.html">Ver proyectos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <span class="bajar">Seguir</span>
+</section>
+
+<section class="sec"><div class="cont">
+  <div class="fila-titulo" data-ver>
+    <div><h2>Proyectos destacados</h2><p class="sub" style="margin-top:12px">Tres proyectos elegidos por la empresa. Al tocar uno se abre su ficha.</p></div>
+    <a class="btn linea" href="proyectos.html">Ver todos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="grilla" id="destacados"></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="cont dos">
+  <div data-ver>
+    <h2>La empresa, en pocas palabras</h2>
+    <p>Texto de ejemplo. Aquí va un resumen de quiénes son, desde cuándo trabajan y qué los distingue. El contenido real lo define la inmobiliaria.</p>
+    <p>Un segundo párrafo breve puede sumar un dato de confianza, si la empresa lo tiene.</p>
+    <a class="btn linea" href="nosotros.html" style="margin-top:10px">Conocer más <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="foto" data-ver="img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=70" alt="Imagen de muestra" loading="lazy"></div>
+</div></section>
+<section class="sec" style="padding:0"><div class="cont"><div class="franja" data-ver>
+  <div><h2>¿Hablamos de su próximo proyecto?</h2><p>Frase de ejemplo que invita a contactar a la empresa.</p></div>
+  <a class="btn claro" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div></div></section>
+</main>
+<footer class="pie"><div class="cont">
+  <a class="logo" href="index.html">Nombre<span>.</span></a>
+  <span>Teléfono · correo · dirección (a definir)</span>
+  <nav aria-label="Pie"><a href="index.html">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+</div></footer>
+</body>
+</html>
