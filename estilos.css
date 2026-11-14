@@ -410,3 +410,47 @@ body.fijo{overflow:hidden}
   @keyframes destapar{from{opacity:0}to{opacity:1}}
   .tiempo::before{transform:scaleX(1);transition:none}
 }
+
+/* ===== Páginas legales, pie legal y aviso de cookies ===== */
+.legal{max-width:820px;padding-bottom:20px}
+.legal h2{font-size:30px;margin:44px 0 14px}
+.legal p,.legal li{color:#3c443f;max-width:70ch}
+.legal ul{padding-left:20px;margin:0 0 14px}
+.legal li{margin-bottom:8px}
+.legal a{color:var(--acento);font-weight:600}
+.legal .fecha{margin-top:44px;color:var(--suave);font-size:14.5px}
+.pend{background:#f3e3a8;color:#3d3105;padding:1px 6px;border-radius:4px;font-size:.94em}
+.borrador{border:1px solid #d9c98a;background:#faf3d9;color:#3d3105;border-radius:12px;padding:14px 18px;max-width:none}
+.tabla{overflow-x:auto;margin:0 0 14px}
+.legal table{border-collapse:collapse;width:100%;min-width:520px;font-size:15.5px}
+.legal th,.legal td{border:1px solid var(--linea);padding:12px 14px;text-align:left;vertical-align:top}
+.legal th{background:var(--papel);font-weight:600}
+.enlace-btn,.pie-legal button{background:none;border:0;padding:0;font:inherit;color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
+.nota-legal{font-size:14px;color:var(--suave);margin:0 0 16px;max-width:none}
+.nota-legal a{color:var(--acento);font-weight:600}
+.pie-legal{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:22px;padding-top:20px;border-top:1px solid var(--linea);font-size:13.5px;align-items:center}
+.pie .pie-legal{justify-content:flex-start}
+.pie-legal a,.pie-legal button{color:var(--suave);font-weight:500;text-decoration:none;padding:10px 0}
+.pie-legal .libro{margin-left:auto;border:1px solid var(--suave);border-radius:8px;padding:8px 14px;color:var(--tinta);font-weight:600}
+.libro-form h2{margin-top:36px}
+.campos-2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.opciones{border:0;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:10px}
+.opciones legend{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--suave);margin-bottom:10px;padding:0}
+.opciones label{display:flex;gap:10px;align-items:flex-start;color:var(--tinta)}
+.opciones input{accent-color:var(--acento);width:18px;height:18px;margin-top:4px;flex:none}
+.cookies{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;width:min(440px,calc(100vw - 40px));background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:20px 22px;box-shadow:0 18px 44px rgba(20,25,21,.18);animation:aparecer-poco .4s var(--ease) both}
+.cookies[hidden]{display:none}
+.cookies p{font-size:14.5px;margin:0 0 14px;color:#3c443f}
+.cookies a{color:var(--acento);font-weight:600}
+.cookies div{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cookies .btn{min-height:44px;padding:8px 12px;font-size:14px}
+@media (hover:hover) and (pointer:fine){
+  .pie-legal a:hover,.pie-legal button:hover{color:var(--tinta)}
+}
+@media (max-width:600px){
+  .legal h2{font-size:26px;margin-top:36px}
+  .campos-2{grid-template-columns:1fr}
+  .pie-legal{flex-direction:column;align-items:flex-start;gap:0}
+  .pie-legal .libro{margin:10px 0 0}
+  .cookies{left:12px;width:calc(100vw - 24px);bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+}

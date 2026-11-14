@@ -184,3 +184,21 @@ compartir?.addEventListener('click', async () => {
     else { await navigator.clipboard.writeText(datos.url); decir('Enlace copiado'); }
   } catch (e) { if (e.name !== 'AbortError') decir('No se pudo compartir'); }
 });
+
+/* ---------- Cookies: nada de analítica se carga sin aceptación ---------- */
+const cookies = $('.cookies');
+const leer = () => { try { return localStorage.getItem('cookies'); } catch (e) { return null; } };
+const activarAnalitica = () => {
+  // PENDIENTE: aquí se carga la herramienta de analítica o publicidad de la web real.
+  // Solo se llama cuando la persona eligió «Aceptar analítica».
+};
+if (cookies) {
+  if (!leer()) cookies.hidden = false; else if (leer() === 'analitica') activarAnalitica();
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cookies-abrir]')) { cookies.hidden = false; $('button', cookies).focus(); return; }
+    const b = e.target.closest('[data-cookies]'); if (!b) return;
+    try { localStorage.setItem('cookies', b.dataset.cookies); } catch (err) {}
+    if (b.dataset.cookies === 'analitica') activarAnalitica();
+    cookies.hidden = true;
+  });
+}
