@@ -8,39 +8,37 @@
 <title>Nosotros · Web modelo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=5">
-<script src="app.js?v=5" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=8">
+<script src="app.js?v=8" defer></script>
 </head>
-<body>
+<body class="">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 <div class="aviso">Web modelo del boceto A · Nombre, textos, categorías e imágenes son de ejemplo</div>
 <header class="cab"><div class="cont">
   <a class="logo" href="index.html">Nombre<span>.</span></a>
   <nav class="menu" id="menu" aria-label="Principal"><a href="index.html">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html" class="aqui" aria-current="page">Nosotros</a><a href="contacto.html">Contacto</a></nav>
-  <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+  <div class="cab-der"><a class="btn cab-cta" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button></div>
 </div></header>
 <main id="contenido">
-<section class="encabezado"><div class="cont">
-  <h1><span class="linea-t"><span>Nosotros</span></span></h1>
-  <p class="sub" style="animation:aparecer .9s var(--ease) .3s both">Frase de ejemplo que presenta a la empresa.</p>
-</div></section>
-<section class="sec" style="padding-top:24px"><div class="cont dos">
-  <div class="foto" data-ver="img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=70" alt="Imagen de muestra"></div>
-  <div data-ver style="--d:.15s">
-    <h2>Historia</h2>
-    <p>Texto de ejemplo. Aquí va la historia de la empresa: cómo empezó, qué recorrido hizo y hacia dónde va.</p>
-    <p>Fechas, cifras e hitos se completan con la información que entregue la inmobiliaria.</p>
+<section class="partida">
+  <div class="partida-txt">
+    <p class="antetitulo">Nombre · Ciudad a definir</p>
+    <h1 class="titular"><span class="linea-t"><span>Palabra uno.</span></span><span class="linea-t"><span>Palabra dos.</span></span><span class="linea-t"><span><em>Palabra tres.</em></span></span></h1>
+    <p class="partida-sub">Frase de ejemplo que resume cómo trabaja la empresa.</p>
   </div>
-</div></section>
+  <div class="partida-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=70" alt="Imagen de muestra"></div>
+</section>
 
-<section class="sec" style="padding-top:0"><div class="cont">
-  <div class="fila-titulo" data-ver><h2>Lo que nos distingue</h2></div>
-  <div class="tres">
-    <div class="valor" data-ver style="--y:14px"><h3>Diferencial uno</h3><p>Explicación breve de ejemplo.</p></div>
-    <div class="valor" data-ver style="--y:14px;--d:.07s"><h3>Diferencial dos</h3><p>Explicación breve de ejemplo.</p></div>
-    <div class="valor" data-ver style="--y:14px;--d:.12s"><h3>Diferencial tres</h3><p>Explicación breve de ejemplo.</p></div>
-  </div>
+<section class="sec"><div class="cont">
+  <div class="fila-titulo" data-ver><h2>Nuestra historia</h2></div>
+  <ol class="tiempo" data-ver="linea">
+    <li class="hito" data-ver style="--y:14px"><span class="punto"></span><small>Año a definir</small><h3>Hito uno</h3><p>Texto breve de ejemplo sobre este momento.</p></li>
+    <li class="hito" data-ver style="--y:14px;--d:.12s"><span class="punto"></span><small>Año a definir</small><h3>Hito dos</h3><p>Texto breve de ejemplo sobre este momento.</p></li>
+    <li class="hito" data-ver style="--y:14px;--d:.22s"><span class="punto"></span><small>Año a definir</small><h3>Hito tres</h3><p>Texto breve de ejemplo sobre este momento.</p></li>
+    <li class="hito" data-ver style="--y:14px;--d:.3s"><span class="punto"></span><small>Año a definir</small><h3>Hito cuatro</h3><p>Texto breve de ejemplo sobre este momento.</p></li>
+  </ol>
 </div></section>
 
 <section class="sec" style="padding-top:0"><div class="cont">

@@ -6,34 +6,41 @@
 <meta name="theme-color" content="#1c211d">
 <meta name="description" content="Web modelo del boceto A. Todo el contenido es de ejemplo.">
 <title>Inicio · Web modelo</title>
-<script>(function(){try{var d=document.documentElement,q=/[?&]intro/.test(location.search);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(q||!sessionStorage.getItem('intro')){d.classList.add('con-intro');sessionStorage.setItem('intro','1')}}catch(e){}})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=5">
-<script src="app.js?v=5" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=8">
+<script src="app.js?v=8" defer></script>
 </head>
-<body>
+<body class="inicio">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
-<div class="intro" aria-hidden="true"><div class="intro-marca"><span>Nombre<i>.</i></span></div><div class="intro-linea"></div></div>
 <div class="aviso">Web modelo del boceto A · Nombre, textos, categorías e imágenes son de ejemplo</div>
 <header class="cab"><div class="cont">
   <a class="logo" href="index.html">Nombre<span>.</span></a>
   <nav class="menu" id="menu" aria-label="Principal"><a href="index.html" class="aqui" aria-current="page">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
-  <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+  <div class="cab-der"><a class="btn cab-cta" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button></div>
 </div></header>
 <main id="contenido">
 <section class="portada">
   <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=70" alt="Imagen de muestra de un proyecto">
   <div class="cont">
-    <h1><span class="linea-t"><span>Titular principal</span></span><span class="linea-t"><span>de la inmobiliaria</span></span></h1>
-    <p>Frase de ejemplo que resume qué hace la empresa y para quién.</p>
-    <a class="btn claro" href="proyectos.html">Ver proyectos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="antetitulo">Frase corta de ejemplo · Qué hace la empresa</p>
+    <h1><span class="linea-t"><span>Titular principal</span></span><span class="linea-t"><span>de la <em>inmobiliaria.</em></span></span></h1>
+    <div class="acciones">
+      <a class="btn claro" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="enlace" href="#destacados-sec">Ver proyectos <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
-  <span class="bajar">Seguir</span>
+  <span class="credito">Proyecto Uno · Ubicación a definir</span>
 </section>
+<div class="flotantes">
+  <button type="button" class="flot" data-compartir aria-label="Compartir esta página"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="5" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="15.5" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M6.8 9l5.9-3.5M6.8 11l5.9 3.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <a class="flot mensaje" href="https://wa.me/?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 16.5V6.200C4 5 5 4 6.200 4h9.600C17 4 18 5 18 6.200v6.600c0 1.200-1 2.200-2.200 2.200H8.500L4 18.500z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
+</div>
+<span class="aviso-copia" role="status" aria-live="polite"></span>
 
-<section class="sec"><div class="cont">
+<section class="sec" id="destacados-sec"><div class="cont">
   <div class="fila-titulo" data-ver>
     <div><h2>Proyectos destacados</h2><p class="sub" style="margin-top:12px">Tres proyectos elegidos por la empresa. Al tocar uno se abre su ficha.</p></div>
     <a class="btn linea" href="proyectos.html">Ver todos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>

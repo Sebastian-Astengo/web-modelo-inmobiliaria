@@ -13,6 +13,9 @@ const PROYECTOS = [
   { n: 'Proyecto Ocho',   c: 'Categoría 2', f: ['1564013799919-ab600027ffc6', '1560448204-e02f11c3d0e2', '1600566753190-17f0baa2a6c3', '1493809842364-78817add7ffb'] },
   { n: 'Proyecto Nueve',  c: 'Categoría 1', f: ['1479839672679-a46483c0e7c8', '1502672260266-1c1ef2d93688', '1600210492486-724fe5c67fb0', '1522708323590-d24dbb6b0267'] },
 ];
+// PENDIENTE: número de WhatsApp de la inmobiliaria, con código de país y sin signos (ej. 51999999999)
+const WA_NUM = '';
+const wa = (texto) => `https://wa.me/${WA_NUM}?text=${encodeURIComponent(texto)}`;
 const RESUMEN = 'Descripción breve de ejemplo: aquí va una frase sobre el proyecto.';
 const DESCRIPCION = 'Texto de ejemplo. Aquí va la descripción real del proyecto: qué es, dónde está, a quién está dirigido y qué lo hace especial. La inmobiliaria define este contenido.';
 
@@ -49,7 +52,7 @@ observar();
 const tarjeta = (p, i) => `
   <button class="tarjeta" data-i="${PROYECTOS.indexOf(p)}" data-cat="${p.c}" style="--d:${[0, 0.07, 0.12][i % 3]}s;--y:${[22, 18, 14][i % 3]}px" aria-label="Ver ${p.n}, ${p.c}">
     <span class="foto"><img src="${foto(p.f[0], 800)}" alt="Imagen de muestra de ${p.n}" loading="lazy" decoding="async"><span class="etq">${p.c}</span></span>
-    <span class="txt"><span class="nom">${p.n}</span><span class="res">${RESUMEN}</span><span class="ver">Ver proyecto ${FLECHA}</span></span>
+    <span class="txt"><span class="nom">${p.n}</span><span class="ver">Ver proyecto ${FLECHA}</span></span>
   </button>`;
 
 const destacados = $('#destacados');
@@ -62,7 +65,7 @@ if (destacados) {
 const grilla = $('#grilla');
 if (grilla) {
   const pest = $('.pest');
-  const cats = ['Todas', ...new Set(PROYECTOS.map((p) => p.c))];
+  const cats = [...new Set(PROYECTOS.map((p) => p.c))];
   pest.innerHTML = '<span class="pastilla"></span>' + cats.map((c, i) => `<button class="${i ? '' : 'activa'}" aria-pressed="${!i}" data-cat="${c}">${c}</button>`).join('');
   const pastilla = $('.pastilla', pest);
   const moverPastilla = () => {
@@ -86,7 +89,7 @@ if (grilla) {
     $$('.tarjeta', grilla).forEach((t) => t.classList.add('sale'));
     clearTimeout(espera); espera = setTimeout(() => pintar(b.dataset.cat), 140);
   });
-  pintar('Todas', true);
+  pintar(cats[0], true);
   (document.fonts?.ready || Promise.resolve()).then(moverPastilla);
   addEventListener('resize', moverPastilla);
 }
@@ -117,18 +120,7 @@ function abrir(i, desde) {
     <div class="cuerpo">
       <div class="cat">${p.c}</div>
       <h2 id="pp-t">${p.n}</h2>
-      <p>${DESCRIPCION}</p>
-      <div class="fichas"><div><small>Ubicación</small>A definir</div><div><small>Estado</small>A definir</div><div><small>Características</small>A definir</div></div>
-      <button class="btn" data-consultar>Consultar por este proyecto ${FLECHA}</button>
-      <div class="plegable"><div>
-        <form>
-          <div class="campo"><input id="c-n" name="nombre" autocomplete="name" placeholder=" " required><label for="c-n">Nombre</label></div>
-          <div class="campo"><input id="c-c" name="contacto" autocapitalize="none" placeholder=" " required><label for="c-c">Correo o teléfono</label></div>
-          <div class="campo"><textarea id="c-m" placeholder=" ">Hola, quisiera más información sobre ${p.n}.</textarea><label for="c-m">Mensaje</label></div>
-          <button class="btn" type="submit">Enviar consulta</button>
-          <div class="ok" role="status" style="margin-top:16px">${CHECK}<span>Consulta enviada (simulación: en el modelo no se envía nada).</span></div>
-        </form>
-      </div></div>
+      <a class="btn" href="${wa(`Hola, quisiera información sobre ${p.n}.`)}" target="_blank" rel="noopener">Consultar por WhatsApp ${FLECHA}</a>
     </div>`;
   mostrarFoto(0);
   popup.scrollTop = 0;
@@ -180,3 +172,15 @@ document.addEventListener('submit', (e) => {
   ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 $$('[data-check]').forEach((el) => { el.innerHTML = CHECK + el.innerHTML; });
+
+/* ---------- Compartir (Inicio) ---------- */
+const compartir = $('[data-compartir]');
+compartir?.addEventListener('click', async () => {
+  const datos = { title: document.title, url: location.href };
+  const nota = $('.aviso-copia');
+  const decir = (t) => { nota.textContent = t; nota.classList.add('si'); setTimeout(() => nota.classList.remove('si'), 2200); };
+  try {
+    if (navigator.share) await navigator.share(datos);
+    else { await navigator.clipboard.writeText(datos.url); decir('Enlace copiado'); }
+  } catch (e) { if (e.name !== 'AbortError') decir('No se pudo compartir'); }
+});
