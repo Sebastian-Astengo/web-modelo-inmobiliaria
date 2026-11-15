@@ -3,69 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1c211d">
-<meta name="description" content="Web modelo del boceto A. Todo el contenido es de ejemplo.">
-<title>Inicio · Web modelo</title>
+<meta name="theme-color" content="#1d1d1b">
+<meta name="description" content="F Arquitectura & Diseño: proyectos de arquitectura e interiorismo en Lima desde 2019.">
+<title>F Arquitectura & Diseño · Arquitectura e interiorismo en Lima</title>
+<link rel="icon" type="image/png" href="media/marca/logo-f.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=9">
-<script src="app.js?v=9" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=24">
+<script src="app.js?v=24" defer></script>
 </head>
 <body class="inicio">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
-<div class="aviso">Web modelo del boceto A · Nombre, textos, categorías e imágenes son de ejemplo</div>
 <header class="cab"><div class="cont">
-  <a class="logo" href="index.html">Nombre<span>.</span></a>
-  <nav class="menu" id="menu" aria-label="Principal"><a href="index.html" class="aqui" aria-current="page">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
-  <div class="cab-der"><a class="btn cab-cta" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a class="logo" href="index.html" aria-label="F Arquitectura y Diseño, inicio"><img src="media/marca/logo-f.png" alt="" width="48" height="47"></a>
+  <nav class="menu" id="menu" aria-label="Principal"><a href="index.html" class="aqui" aria-current="page">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a><a class="btn menu-cta" href="contacto.html">Cotiza tu proyecto <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+  <div class="cab-der"><a class="btn cab-cta" href="contacto.html">Cotiza tu proyecto <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <button class="hamb" aria-label="Menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button></div>
 </div></header>
 <main id="contenido">
-<section class="portada">
-  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=70" alt="Imagen de muestra de un proyecto">
+<section class="portada carrusel" role="group" aria-roledescription="carrusel" aria-label="Proyectos destacados">
+  <div class="lam on" data-credito="Gaya"><img src="media/portada/gaya-joyeria.jpg" srcset="media/portada/gaya-joyeria-m.jpg 1100w, media/portada/gaya-joyeria.jpg 2400w" sizes="100vw" alt="Proyecto Gaya" fetchpriority="high"></div>
+  <div class="lam" data-credito="ULima Store"><img src="media/portada/ulima-store.jpg" srcset="media/portada/ulima-store-m.jpg 1100w, media/portada/ulima-store.jpg 2400w" sizes="100vw" alt="Proyecto ULima Store" loading="lazy"></div>
+  <div class="lam" data-credito="Hotel El Tambo"><img src="media/proyectos/hotel-el-tambo/1.jpg" srcset="media/proyectos/hotel-el-tambo/1-m.jpg 900w, media/proyectos/hotel-el-tambo/1.jpg 1800w" sizes="100vw" alt="Proyecto Hotel El Tambo" loading="lazy"></div>
+  <div class="lam" data-credito="Helado de Lima"><img src="media/portada/helado-de-lima.jpg" srcset="media/portada/helado-de-lima-m.jpg 1100w, media/portada/helado-de-lima.jpg 2400w" sizes="100vw" alt="Proyecto Helado de Lima" loading="lazy"></div>
+  <div class="lam" data-credito="Alianza Francesa"><img src="media/proyectos/alianza-francesa/1.jpg" srcset="media/proyectos/alianza-francesa/1-m.jpg 900w, media/proyectos/alianza-francesa/1.jpg 1800w" sizes="100vw" alt="Proyecto Alianza Francesa" loading="lazy"></div>
+  <div class="lam" data-credito="Piloto Skyline"><img src="media/proyectos/piloto-skyline-edifica/1.jpg" srcset="media/proyectos/piloto-skyline-edifica/1-m.jpg 900w, media/proyectos/piloto-skyline-edifica/1.jpg 1800w" sizes="100vw" alt="Proyecto Piloto Skyline" loading="lazy"></div>
+  <div class="premio"><span>Ganadores 2026</span><img src="media/marca/rino-2026-blanco.png" alt="Premios RINO" width="150" height="79"></div>
   <div class="cont">
-    <p class="antetitulo">Frase corta de ejemplo · Qué hace la empresa</p>
-    <h1><span class="linea-t"><span>Titular principal</span></span><span class="linea-t"><span>de la <em>inmobiliaria.</em></span></span></h1>
+    <p class="antetitulo">F Arquitectura y Diseño</p>
+    <h1><span class="linea-t"><span>Crear, Hacer,</span></span><span class="linea-t"><span>Disfrutar</span></span></h1>
     <div class="acciones">
-      <a class="btn claro" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="enlace" href="#destacados-sec">Ver proyectos <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn" href="contacto.html">Cotiza tu proyecto <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="enlace" href="#estudio">Conoce el estudio <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
-  <span class="credito">Proyecto Uno · Ubicación a definir</span>
+  <span class="credito" aria-live="off">Gaya</span>
+  <div class="car-ctrl"></div>
 </section>
 <div class="flotantes">
-  <button type="button" class="flot" data-compartir aria-label="Compartir esta página"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="5" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="15.5" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M6.8 9l5.9-3.5M6.8 11l5.9 3.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
-  <a class="flot mensaje" href="https://wa.me/?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 16.5V6.200C4 5 5 4 6.200 4h9.600C17 4 18 5 18 6.200v6.600c0 1.200-1 2.200-2.200 2.200H8.500L4 18.500z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
+  <a class="flot mensaje" href="https://wa.me/51953980858?text=Hola%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 16.5V6.2C4 5 5 4 6.2 4h9.6C17 4 18 5 18 6.2v6.6c0 1.2-1 2.2-2.2 2.2H8.5L4 18.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
-<span class="aviso-copia" role="status" aria-live="polite"></span>
 
-<section class="sec" id="destacados-sec"><div class="cont">
-  <div class="fila-titulo" data-ver>
-    <div><h2>Proyectos destacados</h2><p class="sub" style="margin-top:12px">Tres proyectos elegidos por la empresa. Al tocar uno se abre su ficha.</p></div>
-    <a class="btn linea" href="proyectos.html">Ver todos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="grilla" id="destacados"></div>
-</div></section>
-
-<section class="sec" style="padding-top:0"><div class="cont dos">
+<section class="sec" id="estudio"><div class="cont dos">
   <div data-ver>
-    <h2>La empresa, en pocas palabras</h2>
-    <p>Texto de ejemplo. Aquí va un resumen de quiénes son, desde cuándo trabajan y qué los distingue. El contenido real lo define la inmobiliaria.</p>
-    <p>Un segundo párrafo breve puede sumar un dato de confianza, si la empresa lo tiene.</p>
-    <a class="btn linea" href="nosotros.html" style="margin-top:10px">Conocer más <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <h2>Espacios pensados para quienes los viven</h2>
+    <p>Desde 2019, en F Arquitectura &amp; Diseño desarrollamos proyectos de arquitectura e interiorismo que parten de comprender las necesidades de cada cliente, creando espacios auténticos, funcionales y con identidad propia.</p>
+    <a class="btn linea" href="nosotros.html" style="margin-top:10px">Conoce nuestro estudio <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
-  <div class="foto" data-ver="img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=70" alt="Imagen de muestra" loading="lazy"></div>
+  <div class="foto" data-ver="img"><img src="media/proyectos/depa-miraflores-e-h/1.jpg" srcset="media/proyectos/depa-miraflores-e-h/1-m.jpg 900w, media/proyectos/depa-miraflores-e-h/1.jpg 1800w" sizes="(max-width:900px) 100vw, 50vw" alt="Depa Miraflores E.H." loading="lazy"></div>
 </div></section>
-<section class="sec" style="padding:0"><div class="cont"><div class="franja" data-ver>
-  <div><h2>¿Hablamos de su próximo proyecto?</h2><p>Frase de ejemplo que invita a contactar a la empresa.</p></div>
-  <a class="btn claro" href="contacto.html">Contactar <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<section class="sec" style="padding-top:0"><div class="cont">
+  <div class="fila-titulo" data-ver>
+    <div><h2>Proyectos destacados</h2><p class="sub" style="margin-top:12px">Una selección de espacios donde el diseño, la identidad y la experiencia se encuentran.</p></div>
+    <a class="btn linea" href="proyectos.html">Ver todos los proyectos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="grilla cuatro" id="destacados"></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="cont">
+  <div class="fila-titulo" data-ver><h2>Nuestros servicios</h2>
+    <a class="btn linea" href="nosotros.html#servicios">Conoce más sobre nuestros servicios <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <ul class="servicios" data-ver style="--y:14px"><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 19h16M5 19V8l6-4 6 4v11M9 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Proyectos Arquitectónicos</b></li><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 12V9a2 2 0 012-2h10a2 2 0 012 2v3M3 12h16v4H3zM5 16v2M17 16v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Diseño de Interiores</b></li><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M5 6v10h12V6M8 19l3-3 3 3M11 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Espacios Expositivos</b></li><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M7 3v9M15 3v9M5 12h12v3H5zM7 15v4M15 15v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Diseño de Mobiliario</b></li><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M5 4h9a3 3 0 013 3v11H8a3 3 0 01-3-3zM5 15a3 3 0 013-3h9M9 8h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Manuales de Marca para Locales</b></li><li><span class="serv-ic"><svg width="26" height="26" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 18l7-7M9.500 5.500l7 7M13 4l5 5-2 2-5-5zM4 18h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Ejecución de Proyectos</b></li></ul>
+</div></section>
+<section class="sec recono-sec"><div class="cont recono" data-ver>
+  <div>
+    <p class="antetitulo">Reconocimiento</p>
+    <h2>Premios RINO 2026</h2>
+    <p class="recono-g">Ganadores en Interiorismo Comercial · Tiendas y Showrooms</p>
+    <p>Proyecto El Espacio de Arte y Joyas de Gaya<br>México 2026</p>
+    <img class="rino" src="media/marca/rino-2026-blanco.png" alt="Premios RINO: reconocimiento al interiorismo notable y original de Latinoamérica" width="170" height="89" loading="lazy">
+    <p><a class="btn" href="nosotros.html#prensa">Ver prensa y reconocimientos <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+  <div class="foto" data-ver="img"><img src="media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/2.jpg" srcset="media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/2-m.jpg 900w, media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/2.jpg 1800w" sizes="(max-width:900px) 100vw, 50vw" alt="El Espacio de Arte y Joyas de Gaya, Casacor 2025" loading="lazy"></div>
+</div></section><section class="sec"><div class="cont"><div class="franja" data-ver>
+  <h2>¿Tienes un proyecto en mente?</h2>
+  <p>Conversemos sobre cómo podemos diseñarlo y hacerlo realidad.</p>
+  <a class="btn" href="contacto.html">Hablemos de tu proyecto <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div></div></section>
 </main>
-<footer class="pie"><div class="cont">
-  <a class="logo" href="index.html">Nombre<span>.</span></a>
-  <span>Teléfono · correo · dirección (a definir)</span>
-  <nav aria-label="Pie"><a href="index.html">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+<footer class="pie"><div class="cont pie-cols">
+  <div class="pie-marca"><a class="logo" href="index.html" aria-label="F Arquitectura y Diseño, inicio"><img src="media/marca/logo-f.png" alt="" width="64" height="63"></a><p>F Arquitectura &amp; Diseño<br>Crear, Hacer, Disfrutar</p></div>
+  <div><h3>Explorar</h3><nav aria-label="Pie"><a href="index.html">Inicio</a><a href="proyectos.html">Proyectos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav></div>
+  <div><h3>Contacto</h3><p><a href="mailto:fernandoap@farqdis.com">fernandoap@farqdis.com</a><br><a href="tel:+51953980858">+51 953 980 858</a><br>Lima, Perú</p>
+    <h3 class="sig">Síguenos</h3><p><a href="https://www.instagram.com/f.arqdis/" target="_blank" rel="noopener">Instagram</a></p></div>
+  <div><h3>Ubicación</h3><p><a href="https://www.google.com/maps/search/?api=1&query=Central%20Tower%2C%20Av.%20El%20Derby%20254%2C%20Lima%2015023" target="_blank" rel="noopener">Central Tower, Av. El Derby 254,<br>Lima 15023</a></p></div>
 </div>
 <div class="cont pie-legal">
   <a href="politica-de-privacidad.html">Política de privacidad</a>
@@ -75,7 +98,7 @@
   <a class="libro" href="libro-de-reclamaciones.html">Libro de Reclamaciones</a>
 </div></footer>
 <div class="cookies" role="dialog" aria-label="Preferencias de cookies" hidden>
-  <p><b>Usted decide cómo medimos.</b> Usamos cookies de analítica para entender cómo se usa la web. Puede aceptarlas o seguir solo con las necesarias. <a href="politica-de-cookies.html">Política de cookies</a></p>
+  <p><b>Tú decides cómo medimos.</b> Usamos cookies de analítica para entender cómo se usa la web. Puedes aceptarlas o seguir solo con las necesarias. <a href="politica-de-cookies.html">Política de cookies</a></p>
   <div><button type="button" class="btn" data-cookies="analitica">Aceptar analítica</button><button type="button" class="btn linea" data-cookies="necesarias">Solo necesarias</button></div>
 </div>
 </body>

@@ -1,23 +1,33 @@
-// Web modelo (boceto A). Todo el contenido es de ejemplo: nombres, textos e imágenes
-// se reemplazan por los datos reales de la inmobiliaria.
-const foto = (id, w = 1200) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+// Web de F Arquitectura & Diseño.
+const foto = (ruta, w = 1200) => `${ruta}${w <= 900 ? '-m' : ''}.jpg`;
 
+// Proyectos reales, en el orden de la guía del cliente.
 const PROYECTOS = [
-  { n: 'Proyecto Uno',    c: 'Categoría 1', f: ['1600585154340-be6161a56a0c', '1600607687939-ce8a6c25118c', '1600566753190-17f0baa2a6c3', '1600210492486-724fe5c67fb0'] },
-  { n: 'Proyecto Dos',    c: 'Categoría 2', f: ['1545324418-cc1a3fa10c00', '1502672260266-1c1ef2d93688', '1522708323590-d24dbb6b0267', '1493809842364-78817add7ffb'] },
-  { n: 'Proyecto Tres',   c: 'Categoría 1', f: ['1512917774080-9991f1c4c750', '1560448204-e02f11c3d0e2', '1600566753190-17f0baa2a6c3', '1600607687939-ce8a6c25118c'] },
-  { n: 'Proyecto Cuatro', c: 'Categoría 3', f: ['1486406146926-c627a92ad1ab', '1497366216548-37526070297c', '1487958449943-2429e8be8625', '1479839672679-a46483c0e7c8'] },
-  { n: 'Proyecto Cinco',  c: 'Categoría 2', f: ['1600596542815-ffad4c1539a9', '1493809842364-78817add7ffb', '1560448204-e02f11c3d0e2', '1502672260266-1c1ef2d93688'] },
-  { n: 'Proyecto Seis',   c: 'Categoría 1', f: ['1613490493576-7fde63acd811', '1600210492486-724fe5c67fb0', '1522708323590-d24dbb6b0267', '1600607687939-ce8a6c25118c'] },
-  { n: 'Proyecto Siete',  c: 'Categoría 3', f: ['1487958449943-2429e8be8625', '1497366216548-37526070297c', '1486406146926-c627a92ad1ab', '1479839672679-a46483c0e7c8'] },
-  { n: 'Proyecto Ocho',   c: 'Categoría 2', f: ['1564013799919-ab600027ffc6', '1560448204-e02f11c3d0e2', '1600566753190-17f0baa2a6c3', '1493809842364-78817add7ffb'] },
-  { n: 'Proyecto Nueve',  c: 'Categoría 1', f: ['1479839672679-a46483c0e7c8', '1502672260266-1c1ef2d93688', '1600210492486-724fe5c67fb0', '1522708323590-d24dbb6b0267'] },
+  { n: 'Depa Miraflores E.H.', sub: '', c: 'Residencial', f: ['media/proyectos/depa-miraflores-e-h/1', 'media/proyectos/depa-miraflores-e-h/2', 'media/proyectos/depa-miraflores-e-h/3', 'media/proyectos/depa-miraflores-e-h/4', 'media/proyectos/depa-miraflores-e-h/5', 'media/proyectos/depa-miraflores-e-h/6'] },
+  { n: 'Depa San Isidro D.J.', sub: '', c: 'Residencial', f: ['media/proyectos/depa-san-isidro-d-j/1', 'media/proyectos/depa-san-isidro-d-j/2', 'media/proyectos/depa-san-isidro-d-j/3', 'media/proyectos/depa-san-isidro-d-j/4'] },
+  { n: 'Casa de Playa Km 87 A.C.', sub: '', c: 'Residencial', f: ['media/proyectos/casa-de-playa-km-87-a-c/1', 'media/proyectos/casa-de-playa-km-87-a-c/2'] },
+  { n: 'Depa San Isidro C.M.', sub: '', c: 'Residencial', d: 3, f: ['media/proyectos/depa-san-isidro-c-m/3', 'media/proyectos/depa-san-isidro-c-m/1', 'media/proyectos/depa-san-isidro-c-m/2', 'media/proyectos/depa-san-isidro-c-m/4', 'media/proyectos/depa-san-isidro-c-m/5'] },
+  { n: 'Depa San Borja A.G.', sub: '', c: 'Residencial', f: ['media/proyectos/depa-san-borja-a-g/1', 'media/proyectos/depa-san-borja-a-g/2', 'media/proyectos/depa-san-borja-a-g/3'] },
+  { n: 'Helado de Lima', sub: '', c: 'Comercial', f: ['media/proyectos/helado-de-lima/1', 'media/proyectos/helado-de-lima/2', 'media/proyectos/helado-de-lima/3', 'media/proyectos/helado-de-lima/4', 'media/proyectos/helado-de-lima/5', 'media/proyectos/helado-de-lima/6'] },
+  { n: 'ULima Store', sub: '', c: 'Comercial', d: 2, f: ['media/proyectos/ulima-store/1', 'media/proyectos/ulima-store/2', 'media/proyectos/ulima-store/3', 'media/proyectos/ulima-store/4', 'media/proyectos/ulima-store/5'] },
+  { n: 'Hikari', sub: '', c: 'Comercial', f: ['media/proyectos/hikari/1', 'media/proyectos/hikari/2', 'media/proyectos/hikari/3'] },
+  { n: 'Hotel El Tambo', sub: '', c: 'Comercial', f: ['media/proyectos/hotel-el-tambo/1', 'media/proyectos/hotel-el-tambo/2', 'media/proyectos/hotel-el-tambo/3', 'media/proyectos/hotel-el-tambo/4', 'media/proyectos/hotel-el-tambo/5', 'media/proyectos/hotel-el-tambo/6', 'media/proyectos/hotel-el-tambo/7'] },
+  { n: 'Apuesta Total', sub: '', c: 'Corporativo', f: ['media/proyectos/apuesta-total/1', 'media/proyectos/apuesta-total/2'] },
+  { n: 'B Capital', sub: '', c: 'Corporativo', f: ['media/proyectos/b-capital/1', 'media/proyectos/b-capital/2', 'media/proyectos/b-capital/3'] },
+  { n: 'Alianza Francesa', sub: '', c: 'Corporativo', f: ['media/proyectos/alianza-francesa/1', 'media/proyectos/alianza-francesa/2', 'media/proyectos/alianza-francesa/3', 'media/proyectos/alianza-francesa/4'] },
+  { n: 'Piloto Skyline', sub: 'Edifica', c: 'Inmobiliario', d: 4, f: ['media/proyectos/piloto-skyline-edifica/1', 'media/proyectos/piloto-skyline-edifica/2', 'media/proyectos/piloto-skyline-edifica/3', 'media/proyectos/piloto-skyline-edifica/4', 'media/proyectos/piloto-skyline-edifica/5'] },
+  { n: 'Piloto Atelier', sub: 'Edifica', c: 'Inmobiliario', f: ['media/proyectos/piloto-atelier-edifica/1', 'media/proyectos/piloto-atelier-edifica/2', 'media/proyectos/piloto-atelier-edifica/3', 'media/proyectos/piloto-atelier-edifica/4', 'media/proyectos/piloto-atelier-edifica/5'] },
+  { n: 'Áreas comunes Art 28', sub: 'Edifica', c: 'Inmobiliario', f: ['media/proyectos/areas-comunes-art-28-edifica/1', 'media/proyectos/areas-comunes-art-28-edifica/2'] },
+  { n: 'Piloto 1 Art 28', sub: 'Edifica', c: 'Inmobiliario', f: ['media/proyectos/piloto-1-art-28-edifica/1', 'media/proyectos/piloto-1-art-28-edifica/2', 'media/proyectos/piloto-1-art-28-edifica/3', 'media/proyectos/piloto-1-art-28-edifica/4', 'media/proyectos/piloto-1-art-28-edifica/5'] },
+  { n: 'Piloto 2 Art 28', sub: 'Edifica', c: 'Inmobiliario', f: ['media/proyectos/piloto-2-art-28-edifica/1', 'media/proyectos/piloto-2-art-28-edifica/2', 'media/proyectos/piloto-2-art-28-edifica/3'] },
+  { n: 'Home Office para Ella y Estudio para Él', sub: 'Casacor 2022', c: 'Exposición', f: ['media/proyectos/home-office-para-ella-y-estudio-para-el-casacor-2022/1', 'media/proyectos/home-office-para-ella-y-estudio-para-el-casacor-2022/2', 'media/proyectos/home-office-para-ella-y-estudio-para-el-casacor-2022/3', 'media/proyectos/home-office-para-ella-y-estudio-para-el-casacor-2022/4', 'media/proyectos/home-office-para-ella-y-estudio-para-el-casacor-2022/5'] },
+  { n: 'Suite Kohler', sub: 'DIP Restaura 2023', c: 'Exposición', f: ['media/proyectos/suite-kohler-dip-restaura-2023/1', 'media/proyectos/suite-kohler-dip-restaura-2023/2', 'media/proyectos/suite-kohler-dip-restaura-2023/3'] },
+  { n: 'Lab Studio', sub: 'Casacor 2023', c: 'Exposición', f: ['media/proyectos/lab-studio-casacor-2023/1', 'media/proyectos/lab-studio-casacor-2023/2', 'media/proyectos/lab-studio-casacor-2023/3', 'media/proyectos/lab-studio-casacor-2023/4', 'media/proyectos/lab-studio-casacor-2023/5'] },
+  { n: 'Espacio Lontec', sub: 'Expodeco 2023', c: 'Exposición', f: ['media/proyectos/espacio-lontec-expodeco-2023/1', 'media/proyectos/espacio-lontec-expodeco-2023/2', 'media/proyectos/espacio-lontec-expodeco-2023/3', 'media/proyectos/espacio-lontec-expodeco-2023/4', 'media/proyectos/espacio-lontec-expodeco-2023/5'] },
+  { n: 'El Espacio de Arte y Joyas de Gaya', sub: 'Casacor 2025', c: 'Exposición', d: 1, nd: 'Gaya Joyería', e: 'Casacor 2025', f: ['media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/1', 'media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/2', 'media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/3', 'media/proyectos/el-espacio-de-arte-y-joyas-de-gaya-casacor-2025/4'] },
 ];
-// PENDIENTE: número de WhatsApp de la inmobiliaria, con código de país y sin signos (ej. 51999999999)
-const WA_NUM = '';
+const WA_NUM = '51953980858';
 const wa = (texto) => `https://wa.me/${WA_NUM}?text=${encodeURIComponent(texto)}`;
-const RESUMEN = 'Descripción breve de ejemplo: aquí va una frase sobre el proyecto.';
-const DESCRIPCION = 'Texto de ejemplo. Aquí va la descripción real del proyecto: qué es, dónde está, a quién está dirigido y qué lo hace especial. La inmobiliaria define este contenido.';
 
 const FLECHA = '<svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ICONO = (d) => `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="${d}" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -31,7 +41,7 @@ const cab = $('.cab');
 const alDesplazar = () => cab.classList.toggle('baja', scrollY > 12);
 addEventListener('scroll', alDesplazar, { passive: true }); alDesplazar();
 const hamb = $('.hamb');
-const menu = (abrir) => { cab.classList.toggle('abierto', abrir); hamb.setAttribute('aria-expanded', abrir); };
+const menu = (abrir) => { cab.classList.toggle('abierto', abrir); hamb.setAttribute('aria-expanded', abrir); document.body.classList.toggle('fijo', abrir); };
 hamb?.addEventListener('click', () => menu(!cab.classList.contains('abierto')));
 
 /* ---------- Animación de entrada (solo Inicio) ---------- */
@@ -49,15 +59,15 @@ const observar = (raiz = document) => $$('[data-ver]', raiz).forEach((el) => obs
 observar();
 
 /* ---------- Tarjetas ---------- */
-const tarjeta = (p, i) => `
+const tarjeta = (p, i, dest) => `
   <button class="tarjeta" data-i="${PROYECTOS.indexOf(p)}" data-cat="${p.c}" style="--d:${[0, 0.07, 0.12][i % 3]}s;--y:${[22, 18, 14][i % 3]}px" aria-label="Ver ${p.n}, ${p.c}">
-    <span class="foto"><img src="${foto(p.f[0], 800)}" alt="Imagen de muestra de ${p.n}" loading="lazy" decoding="async"><span class="etq">${p.c}</span></span>
-    <span class="txt"><span class="nom">${p.n}</span><span class="ver">Ver proyecto ${FLECHA}</span></span>
+    <span class="foto"><img src="${foto(p.f[0], 800)}" alt="${p.n}" loading="lazy" decoding="async"><span class="etq">${dest ? (p.e || p.c) : (p.sub || p.c)}</span></span>
+    <span class="txt"><span class="nom">${(dest && p.nd) || p.n}</span><span class="ver">Ver proyecto ${FLECHA}</span></span>
   </button>`;
 
 const destacados = $('#destacados');
 if (destacados) {
-  destacados.innerHTML = PROYECTOS.slice(0, 3).map((p, i) => tarjeta(p, i)).join('');
+  destacados.innerHTML = PROYECTOS.filter((p) => p.d).sort((x, y) => x.d - y.d).map((p, i) => tarjeta(p, i, true)).join('');
   $$('.tarjeta', destacados).forEach((t) => { t.dataset.ver = ''; });
   observar(destacados);
 }
@@ -104,7 +114,10 @@ let volverA = null, actual = 0, total = 0;
 
 const mostrarFoto = (k) => {
   actual = (k + total) % total;
-  $$('.gal img', popup).forEach((im, j) => im.classList.toggle('on', j === actual));
+  const ims = $$('.gal img', popup);
+  // Solo se descargan la foto visible y la siguiente; el resto, cuando se piden
+  [actual, (actual + 1) % total].forEach((k) => { const im = ims[k]; if (im && im.dataset.src) { im.src = im.dataset.src; im.removeAttribute('data-src'); } });
+  ims.forEach((im, j) => im.classList.toggle('on', j === actual));
   $$('.minis button', popup).forEach((b, j) => b.classList.toggle('on', j === actual));
 };
 
@@ -113,12 +126,12 @@ function abrir(i, desde) {
   popup.innerHTML = `
     <button class="cerrar" aria-label="Cerrar">${CRUZ}</button>
     <div class="gal">
-      ${p.f.map((id, j) => `<img src="${foto(id, 1400)}" alt="Imagen de muestra ${j + 1} de ${p.n}">`).join('')}
+      ${p.f.map((id, j) => `<img ${j ? 'data-src' : 'src'}="${foto(id, 1400)}" decoding="async" alt="${p.n}, imagen ${j + 1}">`).join('')}
       <button class="fle a" aria-label="Imagen anterior">${ANT}</button><button class="fle s" aria-label="Imagen siguiente">${SIG}</button>
     </div>
     <div class="minis">${p.f.map((id, j) => `<button data-k="${j}" aria-label="Ver imagen ${j + 1}"><img src="${foto(id, 200)}" alt=""></button>`).join('')}</div>
     <div class="cuerpo">
-      <div class="cat">${p.c}</div>
+      <div class="cat">${p.c}${p.sub ? ' · ' + p.sub : ''}</div>
       <h2 id="pp-t">${p.n}</h2>
       <a class="btn" href="${wa(`Hola, quisiera información sobre ${p.n}.`)}" target="_blank" rel="noopener">Consultar por WhatsApp ${FLECHA}</a>
     </div>`;
@@ -202,3 +215,87 @@ if (cookies) {
     cookies.hidden = true;
   });
 }
+
+/* ---------- Carruseles: portada del Inicio (fotos) y Nosotros (video de 5 s y luego fotos) ----------
+   Avanzan solos. Flechas discretas en escritorio; en teléfono se pasan con el dedo. */
+const car = $('.carrusel');
+if (car) {
+  const lams = $$('.lam', car), ctrl = $('.car-ctrl', car), credito = $('.credito', car);
+  const FOTO = car.classList.contains('portada') ? 5000 : 4000, VIDEO = 5000;
+  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const video = $('video', lams[0]), ruta = video && lams[0].dataset.video;
+  if (ruta) { video.src = ruta; lams[0].classList.add('con-video'); }
+  const nombre = (l, k) => $('video', l) ? 'Ver video' : 'Ver imagen ' + (k + (video ? 0 : 1));
+  ctrl.innerHTML = `<button type="button" class="car-fle" data-dir="-1" aria-label="Anterior">${ANT}</button>
+    <div class="car-puntos">${lams.map((l, k) => `<button type="button" aria-label="${nombre(l, k)}"></button>`).join('')}</div>
+    <button type="button" class="car-fle" data-dir="1" aria-label="Siguiente">${SIG}</button>`;
+  const bs = $$('.car-puntos button', ctrl);
+  car.classList.toggle('quieto', quieto);
+  let i = 0, reloj;
+  const ir = (k) => {
+    clearTimeout(reloj);
+    i = (k + lams.length) % lams.length;
+    const dur = $('video', lams[i]) ? VIDEO : FOTO;
+    lams.forEach((l, n) => l.classList.toggle('on', n === i));
+    if (credito && lams[i].dataset.credito) credito.textContent = lams[i].dataset.credito;
+    bs.forEach((b, n) => { b.classList.remove('on'); b.classList.toggle('visto', n < i); b.style.setProperty('--dur', dur + 'ms'); });
+    void ctrl.offsetWidth; bs[i].classList.add('on');
+    if (ruta) { if (i === 0) { video.currentTime = 0; video.play().catch(() => {}); } else video.pause(); }
+    if (!quieto && !document.hidden) reloj = setTimeout(() => ir(i + 1), dur);
+  };
+  ctrl.addEventListener('click', (e) => {
+    const f = e.target.closest('.car-fle'); if (f) return ir(i + +f.dataset.dir);
+    const b = e.target.closest('.car-puntos button'); if (b) ir(bs.indexOf(b));
+  });
+  // Deslizar con el dedo
+  let x0 = null, y0 = 0;
+  car.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') { x0 = e.clientX; y0 = e.clientY; } });
+  car.addEventListener('pointerup', (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0, dy = e.clientY - y0; x0 = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) ir(i + (dx < 0 ? 1 : -1));
+  });
+  car.addEventListener('pointercancel', () => { x0 = null; });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(reloj); else ir(i); });
+  ir(0);
+}
+
+/* ---------- Contacto: armador del mensaje de WhatsApp (sin formulario) ---------- */
+const armador = $('[data-armador]');
+if (armador) {
+  const MOTIVOS = {
+    cotizar: ['Hola, quisiera cotizar un proyecto.', 'Cotiza por WhatsApp'],
+    informacion: ['Hola, quisiera más información.', 'Contáctanos por WhatsApp'],
+    otra: ['Hola, tengo una consulta.', 'Contáctanos por WhatsApp'],
+  };
+  const cajaCat = $('[data-categorias]', armador), vista = $('[data-vista]', armador);
+  const enviar = $('[data-enviar]', armador), etiqueta = $('[data-etiqueta]', armador);
+  cajaCat.innerHTML = [...new Set(PROYECTOS.map((p) => p.c))].map((c) => `<button type="button" class="chip" aria-pressed="false" data-cat="${c}">${c}</button>`).join('');
+  let motivo = 'cotizar', cat = '';
+  const armar = () => {
+    const TIPO = { 'Exposición': 'de exposición' };
+    const texto = MOTIVOS[motivo][0] + (cat ? ` Es un proyecto ${TIPO[cat] || cat.toLowerCase()}.` : '');
+    vista.textContent = texto; vista.classList.remove('cambia'); void vista.offsetWidth; vista.classList.add('cambia');
+    enviar.href = wa(texto); etiqueta.textContent = MOTIVOS[motivo][1];
+  };
+  armador.addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    if (b.dataset.motivo) motivo = b.dataset.motivo;
+    else cat = cat === b.dataset.cat ? '' : b.dataset.cat;   // la categoría se puede quitar tocándola de nuevo
+    $$('.chip', armador).forEach((c) => {
+      const on = c.dataset.motivo ? c.dataset.motivo === motivo : c.dataset.cat === cat;
+      c.classList.toggle('on', on); c.setAttribute('aria-pressed', on);
+    });
+    armar();
+  });
+}
+
+/* ---------- Carga anticipada: al acercar el cursor o tocar una tarjeta, se pide ya su primera foto grande ---------- */
+const pedidas = new Set();
+const anticipar = (e) => {
+  const t = e.target.closest?.('.tarjeta'); if (!t) return;
+  const p = PROYECTOS[+t.dataset.i]; if (!p || pedidas.has(p.f[0])) return;
+  pedidas.add(p.f[0]); new Image().src = foto(p.f[0], 1400);
+};
+document.addEventListener('pointerover', anticipar, { passive: true });
+document.addEventListener('touchstart', anticipar, { passive: true });

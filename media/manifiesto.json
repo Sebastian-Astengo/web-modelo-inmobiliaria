@@ -1,0 +1,750 @@
+{
+ "proyectos": [
+  {
+   "carpeta": "Casa de Playa Km 87 A.C",
+   "cat": "Residencial",
+   "slug": "casa-de-playa-km-87-a-c",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1200,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Depa Miraflores E.H",
+   "cat": "Residencial",
+   "slug": "depa-miraflores-e-h",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1200,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1200,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1200,
+     "h": 1800,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 6,
+     "w": 1800,
+     "h": 1200,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Depa San Borja A.G",
+   "cat": "Residencial",
+   "slug": "depa-san-borja-a-g",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1201,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Depa San Isidro C.M",
+   "cat": "Residencial",
+   "slug": "depa-san-isidro-c-m",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1201,
+     "h": 1800,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1201,
+     "h": 1800,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1201,
+     "origen": "7.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1800,
+     "h": 1201,
+     "origen": "8.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Depa San Isidro D.J",
+   "cat": "Residencial",
+   "slug": "depa-san-isidro-d-j",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1178,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1200,
+     "h": 1800,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1200,
+     "h": 1800,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "HOTEL EL TAMBO",
+   "cat": "Comercial",
+   "slug": "hotel-el-tambo",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1201,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1201,
+     "h": 1800,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 6,
+     "w": 1800,
+     "h": 1200,
+     "origen": "8.jpg"
+    },
+    {
+     "n": 7,
+     "w": 1800,
+     "h": 1201,
+     "origen": "10.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Helado de Lima",
+   "cat": "Comercial",
+   "slug": "helado-de-lima",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1201,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1800,
+     "h": 1201,
+     "origen": "7.jpg"
+    },
+    {
+     "n": 6,
+     "w": 1800,
+     "h": 1201,
+     "origen": "8.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Hikari",
+   "cat": "Comercial",
+   "slug": "hikari",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1201,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "6.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "ULima Store",
+   "cat": "Comercial",
+   "slug": "ulima-store",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1196,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1195,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1196,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1196,
+     "origen": "8.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1195,
+     "h": 1800,
+     "origen": "9.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "APUESTA TOTAL",
+   "cat": "Corporativo",
+   "slug": "apuesta-total",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1200,
+     "origen": "5.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "Alianza Francesa",
+   "cat": "Corporativo",
+   "slug": "alianza-francesa",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1198,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1198,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1198,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1198,
+     "origen": "6.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "B CAPITAL",
+   "cat": "Corporativo",
+   "slug": "b-capital",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1196,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1196,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1196,
+     "origen": "9.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "AREAS COMUNES ART 28 EDIFICA",
+   "cat": "Inmobiliario",
+   "slug": "areas-comunes-art-28-edifica",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1200,
+     "h": 1800,
+     "origen": "8.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "PILOTO 1 ART 28 EDIFICA",
+   "cat": "Inmobiliario",
+   "slug": "piloto-1-art-28-edifica",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1200,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1200,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1800,
+     "h": 1200,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "PILOTO 2 ART 28 EDIFICA",
+   "cat": "Inmobiliario",
+   "slug": "piloto-2-art-28-edifica",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1201,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "6.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "PILOTO ATELIER EDIFICA",
+   "cat": "Inmobiliario",
+   "slug": "piloto-atelier-edifica",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1196,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1195,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1196,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1188,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1196,
+     "h": 1800,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "PILOTO SKYLINE EDIFICA",
+   "cat": "Inmobiliario",
+   "slug": "piloto-skyline-edifica",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "0.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1620,
+     "h": 1080,
+     "origen": "1.png"
+    },
+    {
+     "n": 3,
+     "w": 1620,
+     "h": 1080,
+     "origen": "3.png"
+    },
+    {
+     "n": 4,
+     "w": 1620,
+     "h": 1080,
+     "origen": "5.png"
+    },
+    {
+     "n": 5,
+     "w": 1620,
+     "h": 1080,
+     "origen": "7.png"
+    }
+   ]
+  },
+  {
+   "carpeta": "1. Home Office Para Ella y Estudio para El - Casacor 2022",
+   "cat": "Exposición",
+   "slug": "home-office-para-ella-y-estudio-para-el-casacor-2022",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1178,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1178,
+     "origen": "4.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1178,
+     "h": 1800,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1800,
+     "h": 1178,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1800,
+     "h": 1178,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "2. Suite Kohler - Dip restaura 2023",
+   "cat": "Exposición",
+   "slug": "suite-kohler-dip-restaura-2023",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1200,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1200,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "7.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "3. Lab Studio - Casacor 2023",
+   "cat": "Exposición",
+   "slug": "lab-studio-casacor-2023",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1196,
+     "origen": "5(1).jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1195,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1200,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1195,
+     "h": 1800,
+     "origen": "7.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1200,
+     "h": 1800,
+     "origen": "8.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "4. Espacio Lontec - Expodeco 2023",
+   "cat": "Exposición",
+   "slug": "espacio-lontec-expodeco-2023",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1200,
+     "h": 1800,
+     "origen": "1.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1200,
+     "h": 1800,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1200,
+     "h": 1800,
+     "origen": "3.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1200,
+     "h": 1800,
+     "origen": "7.jpg"
+    },
+    {
+     "n": 5,
+     "w": 1800,
+     "h": 1200,
+     "origen": "8.jpg"
+    }
+   ]
+  },
+  {
+   "carpeta": "5. El Espacio de Arte y Joyas de Gaya - Casacor 2025",
+   "cat": "Exposición",
+   "slug": "el-espacio-de-arte-y-joyas-de-gaya-casacor-2025",
+   "fotos": [
+    {
+     "n": 1,
+     "w": 1800,
+     "h": 1201,
+     "origen": "2.jpg"
+    },
+    {
+     "n": 2,
+     "w": 1800,
+     "h": 1201,
+     "origen": "5.jpg"
+    },
+    {
+     "n": 3,
+     "w": 1800,
+     "h": 1201,
+     "origen": "6.jpg"
+    },
+    {
+     "n": 4,
+     "w": 1201,
+     "h": 1800,
+     "origen": "10.jpg"
+    }
+   ]
+  }
+ ],
+ "portadas": [
+  {
+   "slug": "gaya-joyeria",
+   "w": 2400,
+   "h": 1601,
+   "origen": "1. GAYA JOYERIA.jpg"
+  },
+  {
+   "slug": "ulima-store",
+   "w": 2400,
+   "h": 1594,
+   "origen": "2. ULIMA STORE.jpg"
+  },
+  {
+   "slug": "helado-de-lima",
+   "w": 2400,
+   "h": 1601,
+   "origen": "4. HELADO DE LIMA.jpg"
+  }
+ ],
+ "fernando": [
+  {
+   "archivo": "fernando-3.jpg",
+   "w": 1025,
+   "h": 1535,
+   "origen": "3.png"
+  },
+  {
+   "archivo": "fernando-img-1069.jpg",
+   "w": 900,
+   "h": 1600,
+   "origen": "IMG_1069.HEIC"
+  },
+  {
+   "archivo": "fernando-img-1071.jpg",
+   "w": 900,
+   "h": 1600,
+   "origen": "IMG_1071.HEIC"
+  }
+ ]
+}

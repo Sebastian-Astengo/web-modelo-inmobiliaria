@@ -1,4 +1,4 @@
-/* Web modelo basada en el boceto A. Colores, tipografías e imágenes son de muestra:
+/* Web modelo. Colores, tipografías e imágenes son de muestra:
    se reemplazan por la marca y los materiales reales de la inmobiliaria. */
 :root{
   --fondo:#f6f3ee; --papel:#fffdf9; --tinta:#1c211d; --suave:#5d655f; --linea:#ddd6c9;
@@ -454,3 +454,423 @@ body.fijo{overflow:hidden}
   .pie-legal .libro{margin:10px 0 0}
   .cookies{left:12px;width:calc(100vw - 24px);bottom:calc(12px + env(safe-area-inset-bottom,0px))}
 }
+
+/* ===== Nosotros: carrusel a la derecha (video de 5 s primero, luego fotos de proyectos) ===== */
+.carrusel{position:relative;animation:destapar 1.2s var(--ease-io) .1s both}
+.partida-img.carrusel img,.partida-img.carrusel video{animation:none}
+.lam{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.lam.on{opacity:1;visibility:visible}
+.lam img,.lam video{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);transition:transform 6s linear}
+.lam.on img,.lam.on video{transform:none}
+.lam-nota{position:absolute;left:20px;top:20px;background:rgba(20,25,21,.72);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.06em;padding:6px 12px;border-radius:999px}
+.lam.con-video .lam-nota{display:none}
+.car-ctrl{position:absolute;left:20px;right:20px;bottom:18px;z-index:2;display:flex;align-items:center;gap:14px}
+.car-pausa{width:44px;height:44px;flex:none;border-radius:50%;border:1.5px solid rgba(255,255,255,.85);background:rgba(20,25,21,.55);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .16s var(--ease),background .2s}
+.car-pausa:active{transform:scale(.94)}
+.car-pausa .i-seguir{display:none}
+.carrusel.pausado .i-pausa{display:none}
+.carrusel.pausado .i-seguir{display:block}
+.car-puntos{display:flex;gap:6px;flex:1}
+.car-puntos button{flex:1;max-width:72px;height:44px;background:none;border:0;padding:0;cursor:pointer;position:relative}
+.car-puntos button::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:rgba(255,255,255,.4)}
+.car-puntos button::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:#fff;transform:scaleX(0);transform-origin:left}
+.car-puntos button.on::after{transform:scaleX(1);transition:transform var(--dur,4s) linear}
+.car-puntos button.visto::after{transform:scaleX(1)}
+.carrusel.pausado .car-puntos button.on::after{transition:none;transform:scaleX(1)}
+.carrusel :focus-visible{outline-color:#fff}
+@media (hover:hover) and (pointer:fine){
+  .car-pausa:hover{background:rgba(20,25,21,.8)}
+}
+@media (max-width:900px){
+  .partida-img.carrusel{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){
+  .lam{transition:opacity .2s ease,visibility .2s}
+  .lam img,.lam video{transform:none;transition:none}
+  .car-puntos button.on::after{transition:none}
+}
+
+/* Sin franja de aviso: la portada del Inicio ocupa toda la pantalla */
+.inicio .portada{height:100vh;height:100svh}
+
+/* ===== Inicio: la portada también es un carrusel de fotos ===== */
+.portada.carrusel{animation:none}
+.portada .lam img{animation:none}
+.portada .lam:first-child img{animation:acercar 2.2s var(--ease) both}
+.portada::after{z-index:1;pointer-events:none}
+.portada .car-ctrl{left:auto;right:96px;bottom:22px;width:230px;z-index:3}
+.portada .credito{bottom:78px}
+@media (max-width:900px){
+  .portada .car-ctrl{left:28px;right:92px;bottom:20px;width:auto}
+  .portada .car-puntos button{max-width:none}
+  .portada .cont{padding-bottom:92px}
+}
+@media (max-width:600px){
+  .portada .car-ctrl{left:20px}
+  .portada .cont{padding-bottom:88px}
+}
+
+/* ===== Carruseles: flechas discretas en lugar de pausa ===== */
+.carrusel{touch-action:pan-y}
+.car-ctrl{gap:2px}
+.car-fle{width:44px;height:44px;flex:none;background:none;border:0;padding:0;color:#fff;opacity:.7;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .16s var(--ease)}
+.car-fle:first-child{margin-left:-14px}
+.car-fle:active{transform:scale(.9)}
+.car-fle svg{filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.carrusel.quieto .car-puntos button.on::after{transition:none}
+.portada .car-ctrl{width:250px;right:86px}
+.menu-cta{display:none}
+@media (hover:hover) and (pointer:fine){
+  .car-fle:hover{opacity:1}
+}
+
+/* ===== Teléfono ===== */
+@media (max-width:900px){
+  /* Menú a pantalla completa, con enlaces grandes y botón de contacto */
+  .menu{height:calc(100vh - 74px);height:calc(100dvh - 74px);padding:20px 28px calc(28px + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;box-shadow:none;border-bottom:0}
+  .menu a:not(.btn){font-family:var(--serif);font-size:38px;font-weight:500;letter-spacing:-.01em;padding:12px 0;border-bottom:1px solid var(--linea);color:var(--tinta)}
+  .menu a.aqui{color:var(--acento);font-weight:500}
+  .menu-cta{display:inline-flex;margin-top:auto;width:100%;min-height:54px;font-size:16px}
+  .menu .menu-cta::after{display:none}
+}
+@media (max-width:600px){
+  /* Carrusel: en teléfono se pasa con el dedo; solo quedan las barras */
+  .car-fle{display:none}
+  .car-ctrl{gap:0}
+  .portada .car-ctrl{left:20px;right:86px;bottom:16px}
+  .partida-img .car-ctrl{bottom:8px}
+  /* Un solo botón flotante */
+  .flot[data-compartir]{display:none}
+  .flotantes{right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  /* Portada: más aire y titular que no se corta */
+  .portada h1{font-size:clamp(40px,12vw,60px)}
+  .portada .cont{padding-bottom:84px}
+  .acciones{padding-right:0}
+  .acciones .btn{min-height:52px}
+  /* Categorías a todo el ancho */
+  .pest{display:flex;width:100%;margin-bottom:24px}
+  .pest button{flex:1;padding:10px 8px;font-size:14.5px}
+  /* Tarjetas más compactas */
+  .grilla{gap:18px}
+  .tarjeta .foto{aspect-ratio:3/2}
+  .tarjeta .txt{padding:16px 18px 18px;flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+  .tarjeta .nom{font-size:24px}
+  .ver{margin-top:0;font-size:0;gap:0}
+  .ver svg{width:20px;height:20px}
+  h2{font-size:32px}
+  /* Pie ordenado en dos columnas */
+  .pie{padding-top:36px}
+  .pie nav{gap:4px 20px}
+  .pie .pie-legal{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-top:16px;padding-top:12px;align-items:center}
+  .pie-legal .libro{grid-column:1/-1;justify-self:start;margin:12px 0 0}
+  .pie-legal button{text-align:left}
+  /* Aviso de cookies compacto: no tapa la portada */
+  .cookies{left:0;right:0;bottom:0;width:auto;border-radius:16px 16px 0 0;border-width:1px 0 0;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px))}
+  .cookies p{font-size:13.5px;margin-bottom:10px;line-height:1.45}
+  .cookies .btn{min-height:44px;font-size:13.5px;padding:6px 8px}
+  /* Nosotros y Contacto */
+  .partida-sub,.banda-sub{font-size:16.5px;margin-top:20px}
+  .equipo{gap:20px 14px}
+  .persona .cara{font-size:44px}
+  .franja h2{font-size:30px}
+}
+
+/* Contacto: bloque de cierre sin formulario */
+.cierre{border-top:1px solid var(--tinta);padding-top:40px;max-width:720px}
+.cierre h2{margin-bottom:16px}
+.cierre p{color:var(--suave);max-width:56ch;margin-bottom:26px}
+@media (max-width:600px){.cierre .btn{width:100%}}
+
+/* Teléfono: el titular de la portada crece y ocupa más alto, para que la foto no quede vacía */
+@media (max-width:600px){
+  .portada h1{font-size:clamp(48px,14.5vw,62px);line-height:.98}
+  .portada .antetitulo{margin-bottom:14px}
+  .acciones{margin-top:22px}
+  .inicio .portada::after{background:linear-gradient(180deg,rgba(20,25,21,.5),rgba(20,25,21,.1) 22%,rgba(20,25,21,.45) 48%,rgba(20,25,21,.86))}
+}
+
+/* ===== Contacto (versión mejorada) ===== */
+.partida.verde .partida-txt{background:var(--acento);color:#fff}
+.partida.verde .partida-sub{color:#dfe8e1}
+.partida .acciones .btn{animation:aparecer-poco .7s var(--ease) .5s both}
+.partida .acciones .enlace{animation-delay:.58s}
+
+/* Armador de mensaje: chips que preparan el texto de WhatsApp, sin formulario */
+.armar{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+.armar h2{margin-bottom:16px}
+.armador{background:var(--papel);border:1px solid var(--linea);border-radius:18px;padding:30px}
+.grupo{margin-bottom:22px}
+.grupo small{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:8px 18px;border-radius:999px;border:1.5px solid var(--linea);background:transparent;font:600 15px var(--sans);color:var(--tinta);cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .16s var(--ease)}
+.chip:active{transform:scale(.96)}
+.chip.on{background:var(--acento);border-color:var(--acento);color:#fff}
+.vista{background:var(--acento-claro);color:var(--acento);border-radius:14px 14px 14px 4px;padding:14px 18px;margin:0 0 20px;font-weight:500;max-width:none}
+.vista span{display:block}
+.vista span.cambia{animation:aparecer-poco .3s var(--ease)}
+.armador .btn{width:100%}
+
+/* Lista de canales */
+.canales{list-style:none;margin:0;padding:0;border-top:1px solid var(--tinta)}
+.canales li{border-bottom:1px solid var(--tinta)}
+.canal{display:flex;align-items:center;gap:22px;padding:24px 8px;text-decoration:none;color:inherit;transition:background .25s,padding .3s var(--ease)}
+.canal-ic{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid var(--linea);display:flex;align-items:center;justify-content:center;color:var(--acento);background:var(--papel);transition:background .25s,color .25s,border-color .25s}
+.canal-txt{flex:1;min-width:0}
+.canal-txt small{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin-bottom:4px}
+.canal-txt b{display:block;font-weight:400;font-size:clamp(21px,2.3vw,28px);letter-spacing:-.02em;line-height:1.2}
+.canal-txt span{display:block;color:var(--suave);font-size:15px;margin-top:2px}
+.canal-ir{flex:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.500px;color:var(--acento)}
+.canal-ir .fl{transition:transform .3s var(--ease)}
+.canal-ir.pendiente{color:#6b5a14;background:#f3e3a8;border-radius:999px;padding:4px 12px;font-size:12.500px}
+a.canal:active{background:var(--acento-claro)}
+
+/* Preguntas frecuentes */
+.faq{border-top:1px solid var(--tinta)}
+.faq details{border-bottom:1px solid var(--tinta)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;min-height:44px;font-family:var(--serif);font-size:24px;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(var(--tinta),var(--tinta)) center/100% 1.5px no-repeat,linear-gradient(var(--tinta),var(--tinta)) center/1.5px 100% no-repeat;transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--suave);margin:0;padding:0 4px 22px;max-width:60ch;animation:aparecer-poco .35s var(--ease)}
+
+.barra-wa{display:none}
+@media (hover:hover) and (pointer:fine){
+  .chip:not(.on):hover{border-color:var(--acento);color:var(--acento)}
+  a.canal:hover{background:var(--papel);padding-left:18px;padding-right:18px}
+  a.canal:hover .canal-ic{background:var(--acento);color:#fff;border-color:var(--acento)}
+  a.canal:hover .fl{transform:translateX(4px)}
+  .faq summary:hover{color:var(--acento)}
+}
+@media (max-width:900px){
+  .armar{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:600px){
+  .armador{padding:20px;border-radius:16px}
+  .chip{padding:8px 14px;font-size:14.500px}
+  .canal{gap:14px;padding:18px 0;flex-wrap:wrap}
+  .canal-ic{width:44px;height:44px}
+  .canal-ir{font-size:13.500px}
+  .faq summary{font-size:21px;padding:16px 0}
+  /* Botón de WhatsApp siempre a mano en teléfono */
+  .contacto .barra-wa{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:45;min-height:54px;border-radius:999px;background:var(--acento);color:#fff;font:600 16px var(--sans);text-decoration:none;box-shadow:0 12px 30px rgba(20,25,21,.3);transition:transform .16s var(--ease)}
+  .contacto .barra-wa:active{transform:scale(.98)}
+  .contacto .pie{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+  .contacto .partida .acciones .btn{display:none}
+  .contacto .partida .acciones{margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .chip,.canal,.canal-ic,.canal-ir .fl,.faq summary::after{transition-duration:.01ms}
+}
+
+/* Portadas partidas: el titular se ajusta a su columna para no cortarse en líneas de una palabra */
+.partida .titular{font-size:clamp(38px,4.5vw,78px)}
+@media (max-width:900px){.partida .titular{font-size:clamp(40px,8vw,64px)}}
+@media (max-width:600px){.partida .titular{font-size:clamp(38px,11.5vw,56px)}}
+
+/* =====================================================================
+   F ARQUITECTURA & DISEÑO: identidad real
+   Tipografías pedidas por el cliente: Bebas Neue (títulos) y Open Sans (texto).
+   Colores tomados del logotipo: amarillo y carbón.
+   ===================================================================== */
+:root{
+  --fondo:#faf9f6; --papel:#fff; --tinta:#1d1d1b; --suave:#5a5a55; --linea:#e3e1d9;
+  --acento:#1d1d1b; --acento-claro:#f1efe8; --arena:#dcd9cf; --marca:#ffcc2a;
+  --serif:"Bebas Neue","Arial Narrow",Impact,sans-serif; --sans:"Open Sans",system-ui,sans-serif;
+}
+html{scrollbar-color:var(--arena) var(--fondo)}
+::selection{background:var(--marca);color:var(--tinta)}
+h1,h2{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+h1{font-size:clamp(56px,8vw,112px)}
+h2{font-size:clamp(40px,4.8vw,66px)}
+h3{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:0;line-height:1.25}
+.encabezado h1{font-size:clamp(64px,9vw,128px)}
+.titular,.portada h1{font-family:var(--serif);font-weight:400;letter-spacing:.005em;line-height:.92;text-transform:uppercase}
+.portada h1{font-size:clamp(64px,11.5vw,184px)}
+.partida .titular{font-size:clamp(48px,6vw,104px)}
+.portada .linea-t,.titular .linea-t{padding-bottom:.04em;margin-bottom:0}
+.antetitulo{font-size:13px;font-weight:700;letter-spacing:.16em}
+.sub{font-size:18px}
+
+/* Logotipo */
+.logo{display:inline-flex;align-items:center;padding:0}
+.logo img{width:48px;height:auto;display:block}
+.pie .logo img{width:64px}
+.cab .cont{height:78px}
+.inicio .portada{margin-top:-78px}
+
+/* Botones: amarillo de marca con texto carbón, como en la guía */
+.btn{background:var(--marca);border-color:var(--marca);color:var(--tinta);border-radius:8px;font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px}
+.btn.claro{background:var(--marca);border-color:var(--marca);color:var(--tinta)}
+.btn.linea{background:transparent;border-color:var(--tinta);color:var(--tinta)}
+.btn.linea:active{background:var(--acento-claro)}
+.inicio .cab:not(.baja):not(.abierto) .cab-cta{background:var(--marca);border-color:var(--marca);color:var(--tinta)}
+.portada :focus-visible,.franja :focus-visible,.partida :focus-visible,.recono :focus-visible{outline-color:var(--marca)}
+.chip{border-radius:8px}
+.pest,.pest button,.pest .pastilla{border-radius:10px}
+.pest .pastilla{background:var(--tinta)}
+.flot.mensaje{background:var(--marca);color:var(--tinta);border-color:var(--marca)}
+.vista{color:var(--tinta)}
+.canal-ic{color:var(--tinta)}
+.ver{color:var(--tinta)}
+.cuerpo .cat{color:var(--suave)}
+.punto::after{background:var(--marca)}
+.tarjeta{border-radius:10px}
+.tarjeta .nom{font-family:var(--sans);font-weight:700;font-size:18px;letter-spacing:0;line-height:1.25}
+.etq{border-radius:6px;text-transform:uppercase;letter-spacing:.08em;font-size:11px;font-weight:700}
+.dos .foto,.franja,.armador,.popup,.gal{border-radius:10px}
+.gal{border-radius:10px 10px 0 0}
+.cuerpo h2{font-size:44px;line-height:1}
+.partida.verde .partida-txt{background:var(--tinta)}
+.partida.verde .partida-sub{color:#d6d4cc}
+
+/* Portada: insignia del premio y carrusel de seis proyectos */
+.premio{position:absolute;left:max(28px,calc((100vw - 1200px)/2 + 28px));top:108px;z-index:2;display:flex;flex-direction:column;gap:8px;color:#fff;animation:solo-opacidad .9s ease .5s both}
+.premio span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.premio img{width:150px;height:auto;position:static;animation:none}
+.portada .antetitulo{font-size:15px;letter-spacing:.14em;margin-bottom:10px}
+.portada .car-ctrl{width:300px}
+.acciones{margin-top:26px}
+
+/* Destacados: cuatro tarjetas */
+.grilla.cuatro{grid-template-columns:repeat(4,1fr);gap:20px}
+.grilla.cuatro .tarjeta .foto{aspect-ratio:4/5}
+
+/* Servicios */
+.servicios{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.servicios li{display:flex;align-items:center;gap:16px;background:var(--papel);border:1px solid var(--linea);border-radius:10px;padding:20px 22px;transition:border-color .25s,transform .3s var(--ease)}
+.servicios b{font-weight:700;font-size:17px;line-height:1.25}
+.serv-ic{flex:none;width:48px;height:48px;border-radius:50%;background:var(--marca);color:var(--tinta);display:flex;align-items:center;justify-content:center}
+.serv-lista{margin:0;border-top:1px solid var(--tinta)}
+.serv-lista>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:center;padding:20px 4px;border-bottom:1px solid var(--tinta)}
+.serv-lista dt{display:flex;align-items:center;gap:16px;font-weight:700;font-size:19px}
+.serv-lista dd{margin:0;color:var(--suave)}
+
+/* Reconocimiento */
+.recono-sec{padding-top:0}
+.recono{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--tinta);color:#fff;border-radius:10px;overflow:hidden;align-items:stretch}
+.recono>div:first-child{padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
+.recono h2{margin-bottom:14px}
+.recono p{color:#d6d4cc;margin-bottom:10px}
+.recono .antetitulo{color:var(--marca);animation:none}
+.recono-g{font-weight:700;color:#fff!important;font-size:18px}
+.recono .rino{width:150px;height:auto;margin:18px 0 22px}
+.recono .foto{min-height:340px;background:#333}
+.recono .foto img{width:100%;height:100%;object-fit:cover}
+
+/* Franja final */
+.franja{background:var(--papel);color:var(--tinta);border:1px solid var(--linea);display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;padding:48px 52px}
+.franja::before,.franja::after{display:none}
+.franja h2{max-width:8.5em}
+.franja p{color:var(--suave);margin:0;font-size:18px;max-width:30ch}
+
+/* Nosotros */
+.anio{display:block;font-family:var(--serif);font-weight:400;font-size:56px;line-height:1;margin-bottom:6px}
+.hito h3{margin-bottom:4px}
+.arq-sec{background:var(--acento-claro);padding:88px 0}
+.arq{grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:72px}
+.dos .foto.retrato{aspect-ratio:4/5;max-width:440px}
+.dos .foto.retrato img{object-position:50% 20%}
+.cargo{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta)!important;margin:-8px 0 22px}
+.valores{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta)}
+.valores li{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;text-transform:uppercase;padding:30px 0 26px 22px;border-left:1px solid var(--linea)}
+.valores li:first-child{border-left:0;padding-left:0}
+.prensa{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;border-top:1px solid var(--tinta)}
+.prensa li{padding:22px 0;border-bottom:1px solid var(--linea)}
+.prensa small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin-bottom:8px}
+.prensa b{font-weight:700;font-size:17px;line-height:1.35}
+
+/* Pie de página en columnas */
+.pie{margin-top:0;padding-top:56px;background:var(--tinta);color:#cfcdc5;border-top:0}
+.pie .cont.pie-cols{display:grid;grid-template-columns:1.2fr 1fr 1.3fr 1.2fr;gap:40px;align-items:start}
+.pie h3{color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.pie h3.sig{margin-top:22px}
+.pie p{margin:0;line-height:1.8}
+.pie nav{display:flex;flex-direction:column;gap:0}
+.pie a{color:#cfcdc5;padding:3px 0}
+.pie-marca p{margin-top:16px;color:#fff;font-weight:600}
+.pie .pie-legal{border-top-color:#3a3a37}
+.pie-legal a,.pie-legal button{color:#a9a79f}
+.pie-legal .libro{border-color:#6d6b65;color:#fff}
+
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{box-shadow:0 10px 24px rgba(29,29,27,.18)}
+  .btn.linea:hover{background:var(--tinta);color:#fff}
+  .servicios li:hover{border-color:var(--tinta);transform:translateY(-2px)}
+  a.canal:hover .canal-ic{background:var(--marca);color:var(--tinta);border-color:var(--marca)}
+  .pie a:hover,.pie-legal a:hover,.pie-legal button:hover{color:#fff}
+}
+@media (max-width:1000px){
+  .grilla.cuatro{grid-template-columns:1fr 1fr}
+  .servicios{grid-template-columns:1fr 1fr}
+  .prensa{grid-template-columns:1fr 1fr}
+  .franja{grid-template-columns:1fr;gap:18px;padding:40px 32px}
+  .pie .cont.pie-cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .recono{grid-template-columns:1fr}
+  .recono>div:first-child{padding:40px 28px}
+  .recono .foto{min-height:0;aspect-ratio:16/10}
+  .arq{grid-template-columns:1fr;gap:32px}
+  .arq-sec{padding:60px 0}
+  .valores{grid-template-columns:1fr 1fr}
+  .valores li:nth-child(3){border-left:0;padding-left:0}
+  .valores li:nth-child(n+3){border-top:1px solid var(--linea)}
+  .menu a:not(.btn){font-family:var(--serif);font-size:48px;font-weight:400;text-transform:uppercase}
+  .premio{left:28px;top:96px}
+  .anio{font-size:46px}
+}
+@media (max-width:600px){
+  h1,.encabezado h1{font-size:clamp(56px,17vw,84px)}
+  h2{font-size:clamp(38px,11vw,48px)}
+  .portada h1{font-size:clamp(60px,19vw,92px);line-height:.9}
+  .partida .titular{font-size:clamp(48px,14vw,68px)}
+  .portada .antetitulo{font-size:13px}
+  .premio{left:20px;top:92px}
+  .premio img{width:112px}
+  .premio span{font-size:10.5px}
+  .grilla.cuatro{grid-template-columns:1fr 1fr;gap:12px}
+  .grilla.cuatro .tarjeta .txt{flex-direction:column;align-items:flex-start;padding:12px 12px 14px;gap:4px}
+  .grilla.cuatro .tarjeta .nom{font-size:15px}
+  .grilla.cuatro .ver{display:none}
+  .grilla.cuatro .etq{left:8px;top:8px;font-size:10px;padding:3px 8px}
+  .servicios{grid-template-columns:1fr;gap:10px}
+  .servicios li{padding:14px 16px}
+  .serv-ic{width:42px;height:42px}
+  .serv-lista>div{grid-template-columns:1fr;gap:8px;padding:18px 0}
+  .serv-lista dt{font-size:17px}
+  .serv-lista dd{padding-left:58px}
+  .prensa{grid-template-columns:1fr}
+  .valores li{font-size:32px;padding:20px 0 18px 14px}
+  .franja{padding:32px 22px;border-radius:10px}
+  .franja .btn{width:100%}
+  .pie .cont.pie-cols{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .pie-marca{grid-column:1/-1}
+  .tarjeta .nom{font-size:17px}
+  .cuerpo h2{font-size:36px}
+  .inicio .portada::after{background:linear-gradient(180deg,rgba(20,20,18,.6),rgba(20,20,18,.1) 26%,rgba(20,20,18,.4) 52%,rgba(20,20,18,.88))}
+}
+
+/* Aviso de cookies en escritorio: barra baja y centrada, para no tapar el titular de la portada */
+@media (min-width:601px){
+  .cookies{left:0;right:0;margin:0 auto;bottom:16px;width:min(900px,calc(100vw - 40px));display:flex;align-items:center;gap:22px;padding:14px 18px 14px 22px;border-radius:12px}
+  .cookies p{margin:0;font-size:13.5px}
+  .cookies div{flex:none;display:flex;gap:8px}
+  .cookies .btn{min-height:40px;white-space:nowrap;font-size:12px}
+}
+.valores li{font-size:clamp(28px,3.3vw,52px)}
+@media (max-width:600px){.valores li{font-size:30px}}
+
+/* Nosotros: portada partida con el título y un carrusel de fotos de proyectos (sin video) */
+.partida .titular{font-size:clamp(64px,8.5vw,136px)}
+.partida-txt{background:var(--tinta)}
+.partida-txt .antetitulo{color:var(--marca)}
+.partida-sub{color:#d6d4cc}
+@media (max-width:600px){.partida .titular{font-size:clamp(60px,18vw,88px)}}
+
+/* Aparición más rápida: las fotos ya pesan poco, la espera venía de la animación */
+[data-ver]{transition-duration:.45s}
+.tarjeta[data-ver]{transition:opacity .45s var(--ease) var(--d,0s),transform .45s var(--ease) var(--d,0s),box-shadow .35s var(--ease)}
+[data-ver="img"] img{transition:clip-path .6s var(--ease-io),transform .9s var(--ease)}
+.lam{transition:opacity .6s ease,visibility .6s}
+.gal img{transition:opacity .3s ease,transform .6s var(--ease)}
+.tarjeta .foto,.dos .foto,.gal,.partida-img,.portada{background-color:var(--arena)}
