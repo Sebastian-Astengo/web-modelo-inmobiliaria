@@ -11,7 +11,7 @@ const PROYECTOS = [
   { n: 'Helado de Lima', sub: '', c: 'Comercial', f: ['media/proyectos/helado-de-lima/1', 'media/proyectos/helado-de-lima/2', 'media/proyectos/helado-de-lima/3', 'media/proyectos/helado-de-lima/4', 'media/proyectos/helado-de-lima/5', 'media/proyectos/helado-de-lima/6'] },
   { n: 'ULima Store', sub: '', c: 'Comercial', d: 2, f: ['media/proyectos/ulima-store/1', 'media/proyectos/ulima-store/2', 'media/proyectos/ulima-store/3', 'media/proyectos/ulima-store/4', 'media/proyectos/ulima-store/5'] },
   { n: 'Hikari', sub: '', c: 'Comercial', f: ['media/proyectos/hikari/1', 'media/proyectos/hikari/2', 'media/proyectos/hikari/3'] },
-  { n: 'Hotel El Tambo', sub: '', c: 'Comercial', f: ['media/proyectos/hotel-el-tambo/1', 'media/proyectos/hotel-el-tambo/2', 'media/proyectos/hotel-el-tambo/3', 'media/proyectos/hotel-el-tambo/4', 'media/proyectos/hotel-el-tambo/5', 'media/proyectos/hotel-el-tambo/6', 'media/proyectos/hotel-el-tambo/7'] },
+  { n: 'Hotel El Tambo - 2 de Mayo', sub: '', c: 'Comercial', f: ['media/proyectos/hotel-el-tambo/1', 'media/proyectos/hotel-el-tambo/2', 'media/proyectos/hotel-el-tambo/3', 'media/proyectos/hotel-el-tambo/4', 'media/proyectos/hotel-el-tambo/5', 'media/proyectos/hotel-el-tambo/6', 'media/proyectos/hotel-el-tambo/7'] },
   { n: 'Apuesta Total', sub: '', c: 'Corporativo', f: ['media/proyectos/apuesta-total/1', 'media/proyectos/apuesta-total/2'] },
   { n: 'B Capital', sub: '', c: 'Corporativo', f: ['media/proyectos/b-capital/1', 'media/proyectos/b-capital/2', 'media/proyectos/b-capital/3'] },
   { n: 'Alianza Francesa', sub: '', c: 'Corporativo', f: ['media/proyectos/alianza-francesa/1', 'media/proyectos/alianza-francesa/2', 'media/proyectos/alianza-francesa/3', 'media/proyectos/alianza-francesa/4'] },
@@ -220,8 +220,7 @@ if (cookies) {
 
 /* ---------- Carruseles: portada del Inicio (fotos) y Nosotros (video de 5 s y luego fotos) ----------
    Avanzan solos. Flechas discretas en escritorio; en teléfono se pasan con el dedo. */
-const car = $('.carrusel');
-if (car) {
+$$('.carrusel').forEach((car) => {
   const lams = $$('.lam', car), ctrl = $('.car-ctrl', car), credito = $('.credito', car);
   const FOTO = car.classList.contains('portada') ? 5000 : 4000, VIDEO = 5000;
   const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -260,7 +259,7 @@ if (car) {
   car.addEventListener('pointercancel', () => { x0 = null; });
   document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(reloj); else ir(i); });
   ir(0);
-}
+});
 
 /* ---------- Contacto: armador del mensaje de WhatsApp (sin formulario) ---------- */
 const armador = $('[data-armador]');

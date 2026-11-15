@@ -910,3 +910,35 @@ h3{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:0;line-
 }
 
 .pie p,.pie a{overflow-wrap:anywhere}
+
+/* ===== Ajustes pedidos por el cliente ===== */
+/* Franja final: centrada */
+.franja{grid-template-columns:1fr;justify-items:center;text-align:center;gap:16px;padding:56px 32px}
+.franja h2{max-width:none}
+.franja p{max-width:44ch;margin:0 auto 10px}
+/* Valores: cada palabra centrada en su espacio */
+.valores li,.valores li:first-child{text-align:center;padding:30px 12px 26px}
+/* Reconocimiento con carrusel */
+.recono .foto.carrusel{position:relative;min-height:380px;animation:none}
+.recono .foto.carrusel .lam img{width:100%;height:100%;object-fit:cover}
+.recono .car-ctrl{left:22px;right:22px;bottom:14px}
+/* Prensa con enlaces */
+.prensa li a{display:block;color:inherit;text-decoration:none}
+.ver-nota{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid var(--marca);padding-bottom:2px}
+.ver-nota .fl{transition:transform .3s var(--ease)}
+@media (hover:hover) and (pointer:fine){
+  .prensa li a:hover .fl{transform:translateX(4px)}
+  .prensa li a:hover b{text-decoration:underline;text-underline-offset:.2em}
+}
+@media (max-width:900px){
+  .recono .foto.carrusel{min-height:0;aspect-ratio:16/10}
+  .valores li:nth-child(3){padding-left:12px}
+}
+@media (max-width:600px){
+  .franja{padding:36px 22px}
+  .franja .btn{width:100%}
+  .valores li,.valores li:first-child,.valores li:nth-child(3){padding:20px 6px 18px}
+  .recono .car-ctrl{left:16px;right:16px;bottom:6px}
+}
+
+.prensa b{display:block}
