@@ -892,3 +892,21 @@ h3{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:0;line-
 @media (max-width:600px) and (prefers-reduced-motion:reduce){
   .popup,.velo.abre .popup{transform:none}
 }
+
+/* ===== Teléfono: datos de contacto sin encimarse y botón fijo de WhatsApp bien visible ===== */
+.barra-wa{background:var(--marca);color:var(--tinta)}
+@media (max-width:600px){
+  .canal{flex-wrap:nowrap;align-items:center;gap:14px;padding:18px 0}
+  .canal-txt{flex:1 1 0;min-width:0}
+  .canal-txt b{font-size:18px;line-height:1.3;overflow-wrap:anywhere}
+  .canal-txt small{font-size:11px;margin-bottom:3px}
+  .canal-txt span{font-size:14px}
+  /* La acción queda como una flecha: el texto ("Enviar correo", "Ver mapa") se encimaba con el dato */
+  .canal-ir{flex:none;font-size:0;gap:0;width:40px;height:40px;border-radius:50%;border:1px solid var(--linea);justify-content:center;color:var(--tinta)}
+  .canal-ir .fl{width:18px;height:18px}
+  .contacto .barra-wa{background:var(--marca);color:var(--tinta);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px;border-radius:10px;border:2px solid var(--tinta);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+  .contacto .pie{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+  .contacto .pie .pie-legal{padding-bottom:0}
+}
+
+.pie p,.pie a{overflow-wrap:anywhere}
