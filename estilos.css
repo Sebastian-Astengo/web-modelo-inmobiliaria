@@ -874,3 +874,21 @@ h3{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:0;line-
 .lam{transition:opacity .6s ease,visibility .6s}
 .gal img{transition:opacity .3s ease,transform .6s var(--ease)}
 .tarjeta .foto,.dos .foto,.gal,.partida-img,.portada{background-color:var(--arena)}
+
+.pest .pastilla{top:0;bottom:auto;transition:transform .3s var(--ease-io),width .3s var(--ease-io),height .3s var(--ease-io)}
+
+/* ===== Teléfono: pop-up centrado en la pantalla y portada del Inicio centrada en vertical ===== */
+@media (max-width:600px){
+  .velo{align-items:center;padding:14px}
+  .popup{width:100%;max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px);border-radius:12px;transform:translateY(16px) scale(.97);opacity:0;transition:transform .2s var(--ease),opacity .18s ease}
+  .velo.abre .popup{transform:none;opacity:1;transition:transform .4s var(--ease),opacity .28s ease}
+  .gal{border-radius:12px 12px 0 0}
+  .cuerpo{padding-bottom:22px}
+
+  .inicio .portada{align-items:center}
+  .inicio .portada .cont{padding-top:186px;padding-bottom:74px}
+  .inicio .portada::after{background:linear-gradient(180deg,rgba(20,20,18,.62),rgba(20,20,18,.42) 30%,rgba(20,20,18,.5) 70%,rgba(20,20,18,.78))}
+}
+@media (max-width:600px) and (prefers-reduced-motion:reduce){
+  .popup,.velo.abre .popup{transform:none}
+}

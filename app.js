@@ -80,8 +80,10 @@ if (grilla) {
   const pastilla = $('.pastilla', pest);
   const moverPastilla = () => {
     const b = $('.activa', pest);
+    // La pastilla sigue al botón también cuando las categorías ocupan más de una fila (teléfono)
     pastilla.style.width = b.offsetWidth + 'px';
-    pastilla.style.transform = `translateX(${b.offsetLeft}px)`;
+    pastilla.style.height = b.offsetHeight + 'px';
+    pastilla.style.transform = `translate(${b.offsetLeft}px, ${b.offsetTop}px)`;
   };
   let espera;
   const pintar = (cat, primera) => {
