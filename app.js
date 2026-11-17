@@ -163,11 +163,6 @@ velo.addEventListener('click', (e) => {
   if (e.target.closest('.fle.a')) return mostrarFoto(actual - 1);
   if (e.target.closest('.fle.s')) return mostrarFoto(actual + 1);
   const m = e.target.closest('.minis button'); if (m) return mostrarFoto(+m.dataset.k);
-  const c = e.target.closest('[data-consultar]');
-  if (c) {
-    const pl = $('.plegable', popup); pl.classList.add('abre'); c.style.display = 'none';
-    setTimeout(() => { $('#c-n', popup).focus({ preventScroll: true }); pl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 350);
-  }
 });
 addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && cab.classList.contains('abierto')) { menu(false); hamb.focus(); }

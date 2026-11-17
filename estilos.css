@@ -201,10 +201,6 @@ button,.btn,.menu a{-webkit-user-select:none;user-select:none}
 .fichas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 22px}
 .fichas div{border:1px solid var(--linea);border-radius:12px;padding:12px 14px}
 .fichas small{display:block;color:var(--suave);font-size:12.5px}
-.plegable{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .4s var(--ease),visibility .4s}
-.plegable.abre{grid-template-rows:1fr;visibility:visible}
-.plegable>div{overflow:hidden}
-.plegable form{padding-top:22px}
 .cuerpo .campo input,.cuerpo .campo textarea{background:#fff}
 .cuerpo .campo textarea{min-height:90px}
 body.fijo{overflow:hidden}
@@ -282,7 +278,6 @@ body.fijo{overflow:hidden}
   .gal img{transform:none;transition:opacity .2s ease}
   .tarjeta,.tarjeta img,.btn,.btn .fl,.ver svg,.pest .pastilla,.cerrar,.gal .fle{transition-duration:.01ms}
   .tarjeta:hover,.btn:hover,.tarjeta:hover img{transform:none}
-  .plegable{transition:none}
 }
 @media (max-width:600px) and (prefers-reduced-motion:reduce){
   .popup{opacity:0}
