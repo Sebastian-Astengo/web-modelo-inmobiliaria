@@ -942,3 +942,18 @@ h3{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:0;line-
 }
 
 .prensa b{display:block}
+
+/* ===== Libro de Reclamaciones: formulario completo ===== */
+.campo select{width:100%;border:1.5px solid var(--linea);background:var(--papel);border-radius:12px;padding:24px 16px 10px;font:inherit;color:inherit;appearance:auto;min-height:58px}
+.campo select:focus{outline:none;border-color:var(--tinta);box-shadow:0 0 0 4px var(--acento-claro)}
+.campo label.fija{transform:translateY(-11px) scale(.78)}
+.acepto{display:flex;gap:12px;align-items:flex-start;margin:6px 0 16px;color:var(--tinta);font-size:15px;cursor:pointer}
+.acepto input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--tinta)}
+.acepto a{font-weight:700}
+.trampa{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.libro-error{background:#fbe6e3;color:#7a1d12;border-radius:10px;padding:12px 16px;font-weight:600;margin:0 0 16px;max-width:none}
+.libro-error[hidden]{display:none}
+.campo.mal input,.campo.mal textarea,.campo.mal select{border-color:#b3261e}
+.opciones.mal legend{color:#b3261e}
+.libro-form .ok{align-items:flex-start}
+.libro-form .ok b{display:block}

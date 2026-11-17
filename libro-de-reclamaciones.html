@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=35">
-<script src="app.js?v=35" defer></script>
+<link rel="stylesheet" href="estilos.css?v=36">
+<script src="app.js?v=36" defer></script>
 </head>
 <body class="">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -29,35 +29,42 @@
   <p class="sub" style="animation:aparecer .9s var(--ease) .3s both">Conforme al Código de Protección y Defensa del Consumidor.</p>
 </div></section><section><div class="cont"><div class="legal"><p class="borrador"><b>Borrador para revisión legal.</b> Los datos resaltados están pendientes y el texto debe ser validado por un abogado antes de publicar la web real.</p>
 <p>F ARQUITECTURA &amp; DISEÑO E.I.R.L. · RUC 20604527393 · Central Tower, Av. El Derby 254, Lima 15023</p>
-<form class="libro-form">
-  <h2>1. Datos del consumidor</h2>
+<form class="libro-form" data-libro novalidate>
+  <h2>1. Identificación del consumidor</h2>
   <div class="campos-2">
-    <div class="campo"><input id="l-nom" placeholder=" " autocomplete="name" required><label for="l-nom">Nombres y apellidos</label></div>
-    <div class="campo"><input id="l-doc" placeholder=" " required><label for="l-doc">DNI o carné de extranjería</label></div>
-    <div class="campo"><input id="l-dom" placeholder=" " autocomplete="street-address" required><label for="l-dom">Domicilio</label></div>
-    <div class="campo"><input id="l-tel" placeholder=" " type="tel" autocomplete="tel" required><label for="l-tel">Teléfono</label></div>
-    <div class="campo"><input id="l-cor" placeholder=" " type="email" autocomplete="email" required><label for="l-cor">Correo electrónico</label></div>
-    <div class="campo"><input id="l-apo" placeholder=" "><label for="l-apo">Padre, madre o tutor (si es menor de edad)</label></div>
+    <div class="campo"><input id="l-nom" name="nombre" placeholder=" " autocomplete="name" required><label for="l-nom">Nombres y apellidos</label></div>
+    <div class="campo"><select id="l-tdoc" name="tipo_documento" required><option value="DNI">DNI</option><option value="CE">Carné de extranjería</option><option value="Pasaporte">Pasaporte</option><option value="RUC">RUC</option></select><label for="l-tdoc" class="fija">Tipo de documento</label></div>
+    <div class="campo"><input id="l-doc" name="documento" placeholder=" " inputmode="numeric" required><label for="l-doc">Número de documento</label></div>
+    <div class="campo"><input id="l-dom" name="domicilio" placeholder=" " autocomplete="street-address" required><label for="l-dom">Domicilio</label></div>
+    <div class="campo"><input id="l-tel" name="telefono" placeholder=" " type="tel" autocomplete="tel" required><label for="l-tel">Teléfono</label></div>
+    <div class="campo"><input id="l-cor" name="correo" placeholder=" " type="email" autocomplete="email" autocapitalize="none" required><label for="l-cor">Correo electrónico</label></div>
   </div>
-  <h2>2. Bien contratado</h2>
+  <div class="campo"><input id="l-apo" name="apoderado" placeholder=" "><label for="l-apo">Padre, madre o tutor (solo si es menor de edad)</label></div>
+
+  <h2>2. Identificación del bien contratado</h2>
   <fieldset class="opciones"><legend>Tipo</legend>
-    <label><input type="radio" name="bien" value="producto" required> Producto</label>
-    <label><input type="radio" name="bien" value="servicio"> Servicio</label>
+    <label><input type="radio" name="bien" value="Producto" required> Producto</label>
+    <label><input type="radio" name="bien" value="Servicio"> Servicio</label>
   </fieldset>
   <div class="campos-2">
-    <div class="campo"><input id="l-mon" placeholder=" " inputmode="decimal"><label for="l-mon">Monto reclamado (S/)</label></div>
-    <div class="campo"><input id="l-des" placeholder=" " required><label for="l-des">Descripción del producto o servicio</label></div>
+    <div class="campo"><input id="l-mon" name="monto" placeholder=" " inputmode="decimal"><label for="l-mon">Monto reclamado (S/)</label></div>
+    <div class="campo"><input id="l-des" name="descripcion" placeholder=" " required><label for="l-des">Descripción del producto o servicio</label></div>
   </div>
-  <h2>3. Detalle</h2>
+
+  <h2>3. Detalle de la reclamación y pedido del consumidor</h2>
   <fieldset class="opciones"><legend>Tipo</legend>
-    <label><input type="radio" name="tipo" value="reclamo" required> Reclamo: disconformidad con el producto o servicio</label>
-    <label><input type="radio" name="tipo" value="queja"> Queja: malestar por la atención recibida</label>
+    <label><input type="radio" name="tipo" value="Reclamo" required> Reclamo: disconformidad con el producto o servicio</label>
+    <label><input type="radio" name="tipo" value="Queja"> Queja: malestar o descontento por la atención recibida</label>
   </fieldset>
-  <div class="campo"><textarea id="l-det" placeholder=" " required></textarea><label for="l-det">Detalle del reclamo o queja</label></div>
-  <div class="campo"><textarea id="l-ped" placeholder=" " required></textarea><label for="l-ped">Pedido del consumidor</label></div>
-  <p class="nota-legal">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para presentar una denuncia ante el INDECOPI. El proveedor debe dar respuesta en un plazo no mayor de quince (15) días hábiles. Sus datos se tratan según la <a href="politica-de-privacidad.html">Política de privacidad</a>.</p>
+  <div class="campo"><textarea id="l-det" name="detalle" placeholder=" " required></textarea><label for="l-det">Detalle del reclamo o queja</label></div>
+  <div class="campo"><textarea id="l-ped" name="pedido" placeholder=" " required></textarea><label for="l-ped">Pedido del consumidor</label></div>
+
+  <label class="acepto"><input type="checkbox" name="acepto" required> <span>Declaro que la información es verdadera y autorizo el tratamiento de mis datos para atender esta hoja de reclamación, según la <a href="politica-de-privacidad.html">Política de privacidad</a>.</span></label>
+  <input type="text" name="sitio_web" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <p class="nota-legal">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para presentar una denuncia ante el INDECOPI. El proveedor debe dar respuesta en un plazo no mayor de quince (15) días hábiles, improrrogable por otros quince (15) en casos justificados.</p>
+  <p class="libro-error" role="alert" hidden></p>
   <button class="btn" type="submit">Enviar hoja de reclamación <svg class="fl" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="ok" role="status" style="margin-top:18px" data-check><span>Hoja registrada (simulación: en el modelo no se envía nada). En la web real, el consumidor debe recibir una copia por correo con número correlativo y fecha.</span></div>
+  <div class="ok" role="status" style="margin-top:18px" data-check><span class="ok-txt"></span></div>
 </form>
 <p class="fecha">Última actualización: <mark class="pend">fecha de publicación</mark></p></div></div></section>
 </main>

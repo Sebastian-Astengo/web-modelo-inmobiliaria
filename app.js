@@ -182,7 +182,7 @@ addEventListener('keydown', (e) => {
 document.addEventListener('submit', (e) => {
   e.preventDefault();
   const f = e.target; const ok = $('.ok', f);
-  if (!ok) return;
+  if (!ok || f.hasAttribute('data-libro')) return;
   ok.classList.add('si'); $('button[type=submit]', f).disabled = true;
   ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
@@ -300,3 +300,46 @@ const anticipar = (e) => {
 };
 document.addEventListener('pointerover', anticipar, { passive: true });
 document.addEventListener('touchstart', anticipar, { passive: true });
+
+/* ---------- Libro de Reclamaciones ----------
+   LIBRO_ENDPOINT: dirección del servicio que recibe la hoja y la envía por correo al estudio y al consumidor.
+   PENDIENTE: se completa cuando se elija el servicio de envío. Mientras esté vacío, la hoja NO se envía
+   y la web lo dice con claridad (no aparece como enviada). */
+const LIBRO_ENDPOINT = '';
+const libro = $('[data-libro]');
+if (libro) {
+  const ok = $('.ok', libro), okTxt = $('.ok-txt', libro), err = $('.libro-error', libro), boton = $('button[type=submit]', libro);
+  const marcar = (el, mal) => (el.closest('.campo') || el.closest('.opciones'))?.classList.toggle('mal', mal);
+  libro.addEventListener('input', (e) => marcar(e.target, false));
+  libro.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if ($('.trampa', libro).value) return;                       // trampa para robots
+    err.hidden = true;
+    const faltan = [...libro.elements].filter((el) => el.name && el.willValidate && !el.checkValidity());
+    $$('.mal', libro).forEach((x) => x.classList.remove('mal'));
+    if (faltan.length) {
+      faltan.forEach((el) => marcar(el, true));
+      err.textContent = 'Faltan datos obligatorios o alguno no es válido. Revisa los campos marcados.';
+      err.hidden = false; faltan[0].focus(); return;
+    }
+    const datos = Object.fromEntries(new FormData(libro)); delete datos.sitio_web;
+    datos.fecha = new Date().toLocaleString('es-PE', { dateStyle: 'long', timeStyle: 'short', timeZone: 'America/Lima' });
+    datos.proveedor = 'F ARQUITECTURA & DISEÑO E.I.R.L. · RUC 20604527393 · Central Tower, Av. El Derby 254, Lima 15023';
+    if (!LIBRO_ENDPOINT) {
+      err.textContent = 'El envío de hojas de reclamación todavía no está activado en esta web: tu hoja NO se ha enviado. Mientras tanto, escríbenos a fernandoap@farqdis.com o por WhatsApp al +51 953 980 858.';
+      err.hidden = false; return;
+    }
+    boton.disabled = true; boton.classList.add('cargando');
+    try {
+      const r = await fetch(LIBRO_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(datos) });
+      const resp = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(resp.error || 'No se pudo enviar');
+      okTxt.innerHTML = `<b>Hoja de reclamación enviada.</b>${resp.codigo ? 'N.º de registro: ' + resp.codigo + '. ' : ''}Te enviaremos una copia a ${datos.correo}. Responderemos en un plazo máximo de 15 días hábiles.`;
+      ok.classList.add('si'); ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      libro.querySelectorAll('input,textarea,select').forEach((x) => { x.disabled = true; });
+    } catch (x) {
+      err.textContent = 'No se pudo enviar la hoja. Inténtalo otra vez o escríbenos a fernandoap@farqdis.com.';
+      err.hidden = false; boton.disabled = false;
+    } finally { boton.classList.remove('cargando'); }
+  });
+}
