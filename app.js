@@ -198,17 +198,18 @@ compartir?.addEventListener('click', async () => {
 /* ---------- Cookies: nada de analítica se carga sin aceptación ---------- */
 const cookies = $('.cookies');
 const leer = () => { try { return localStorage.getItem('cookies'); } catch (e) { return null; } };
-const activarAnalitica = () => {
-  // PENDIENTE: aquí se carga la herramienta de analítica o publicidad de la web real.
-  // Solo se llama cuando la persona eligió «Aceptar analítica».
+const activarPublicidad = () => {
+  // PENDIENTE (sesión de anuncios): cargar aquí el píxel de Meta y la etiqueta de Google Ads con sus ID.
+  // Solo se llama cuando la persona eligió «Aceptar publicidad». Las estadísticas de Cloudflare no usan cookies
+  // y se activan desde el panel de Cloudflare Pages, sin código.
 };
 if (cookies) {
-  if (!leer()) cookies.hidden = false; else if (leer() === 'analitica') activarAnalitica();
+  if (!leer() || leer() === 'analitica') cookies.hidden = false; else if (leer() === 'publicidad') activarPublicidad();
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-cookies-abrir]')) { cookies.hidden = false; $('button', cookies).focus(); return; }
     const b = e.target.closest('[data-cookies]'); if (!b) return;
     try { localStorage.setItem('cookies', b.dataset.cookies); } catch (err) {}
-    if (b.dataset.cookies === 'analitica') activarAnalitica();
+    if (b.dataset.cookies === 'publicidad') activarPublicidad();
     cookies.hidden = true;
   });
 }
